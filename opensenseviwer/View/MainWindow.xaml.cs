@@ -25,5 +25,15 @@ namespace View
             InitializeComponent();
 
         }
+
+        private void button_exit_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void button_minimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 }
