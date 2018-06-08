@@ -7,9 +7,9 @@
         mc:Ignorable="d"
         Title="OpenSenseViewer" Height="671.414" Width="1055.966" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}">
 
-    <Border CornerRadius="20">
+    <Border CornerRadius="20" Background="Transparent">
 
-    <Grid Margin="-10,0,10,0">
+    <Grid Background="#FF2E2E2E" Margin="1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
