@@ -4,6 +4,16 @@
              xmlns:local="clr-namespace:View"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style x:Key="main" TargetType="TextBox">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style x:Key="icon" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="Width" Value="25"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+
+        </Style>
     </Application.Resources>
 </Application>

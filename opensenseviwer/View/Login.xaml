@@ -6,9 +6,5 @@
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
         Title="Login" Height="300" Width="300" Background="{x:Null}" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None">
-    <Grid>
-        
-        
-        
-    </Grid>
+    <Grid/>
 </Window>

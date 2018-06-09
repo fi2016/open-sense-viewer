@@ -30,9 +30,9 @@
                     <RowDefinition Height="25" ></RowDefinition>
                 </Grid.RowDefinitions>
 
-
-                <Button x:Name="button_exit" Content="X" Background="{x:Null}" Foreground="White" Height="25" Width="25" Grid.Column="2" BorderBrush="{x:Null}" Click="button_exit_Click"></Button>
-                <Button x:Name="button_minimize" Content="_" Background="{x:Null}" Foreground="White" Height="25" Width="25" Grid.Column="1" BorderBrush="{x:Null}" Click="button_minimize_Click"></Button>
+                <Button Style="{StaticResource icon}" x:Name="button_minimize" Content="_" Grid.Column="1" Click="button_minimize_Click" />
+                <Button Style="{StaticResource icon}" x:Name="button_exit" Content="X" Grid.Column="2" Click="button_exit_Click"/>
+                
 
 
 
