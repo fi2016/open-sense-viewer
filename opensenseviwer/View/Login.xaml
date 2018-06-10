@@ -5,27 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="Login" Height="300" Width="300" Background="{x:Null}" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowDrop="True" Icon="icons/logo.png">
+        Title="Login" Height="300" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowDrop="True" Icon="icons/logo.png" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}">
 
-        <Border CornerRadius="20" Background="Transparent">
+    <Border CornerRadius="15" BorderBrush="Transparent">
+        <Border.Background>
+            <SolidColorBrush Color="{DynamicResource background_DarkGrey}"/>
+        </Border.Background>
 
-            <Grid Background="#FF2E2E2E" Margin="1">
+        <Grid Margin="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" ></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!-- Header-->
+
+            <Grid Grid.Column="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="25"></ColumnDefinition>
+                    <ColumnDefinition Width="25"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25" ></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                </Grid.RowDefinitions>
-
-                <!-- Header-->
-
-                <Grid Grid.Column="0">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition Width="25"></ColumnDefinition>
-                        <ColumnDefinition Width="25"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25" ></RowDefinition>
                 </Grid.RowDefinitions>
@@ -36,20 +39,38 @@
 
             </Grid>
 
-                <!--Main-->
-                <Grid Grid.Row="1">
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                    </Grid.RowDefinitions>
-                </Grid>
+            <!--Main-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Column="0" Grid.Row="0">
+                    <Label x:Name="label_nickname_fix" Style="{StaticResource label}" Content="Nickname:"/>
+                    <TextBox x:Name="textbox_nickname" Style="{StaticResource textbox}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="0" Grid.Row="1">
+                    <Label x:Name="label_password_fix" Style="{StaticResource label}" Content="Password:"/>
+                    <PasswordBox x:Name="textbox_password"/>
+                </StackPanel>
+
+                <StackPanel Grid.Column="0" Grid.Row="2">
+                    <Label x:Name="label_platform_fix" Style="{StaticResource label}" Content="Platform:"/>
+                    <TextBox x:Name="textbox_platform" Style="{StaticResource textbox}"/>
+                </StackPanel>
+
+                <Button x:Name="button_connect" Content="connect" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Center" Padding="5"/>
+            </Grid>
+
 
         </Grid>
-        </Border>
-   
+    </Border>
+
 </Window>

@@ -9,7 +9,7 @@
 
     <Border CornerRadius="20" Background="Transparent">
 
-        <Grid Background="#FF2E2E2E" Margin="1">
+        <Grid Margin="0,2,2,0" Cursor="" Background="#FF2E2E2E">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
@@ -37,11 +37,24 @@
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
-                    <RowDefinition></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
                 </Grid.RowDefinitions>
+                
+                <!--Menueband-->
+                <Grid Grid.Column="0" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                     <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <GroupBox x:Name="group_sensors" Grid.Column="2" Content="" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0"/>
+
+
+                </Grid>
+                
             </Grid>
 
         </Grid>
