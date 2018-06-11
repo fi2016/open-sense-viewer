@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="OpenSenseViewer" Height="671.414" Width="1055.966" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}" Icon="icons/logo.png">
+        Title="OpenSenseViewer" Height="671.414" Width="1055.966" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}" Icon="icons/logo.png" AllowsTransparency="True">
 
     <Border CornerRadius="20" Background="Transparent">
 
@@ -29,7 +29,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25" ></RowDefinition>
                 </Grid.RowDefinitions>
-</Grid>
+            </Grid>
 
             <!--Main-->
             <Grid Grid.Row="1">
@@ -40,21 +40,21 @@
                     <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="3*"></RowDefinition>
                 </Grid.RowDefinitions>
-                
+
                 <!--Menueband-->
                 <Grid Grid.Column="0" Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                     <ColumnDefinition/>
+                        <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
-                    
+
                     <GroupBox x:Name="group_sensors" Grid.Column="2" Content="" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0"/>
 
 
                 </Grid>
-                
+
             </Grid>
 
         </Grid>
