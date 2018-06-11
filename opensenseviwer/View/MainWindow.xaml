@@ -1,0 +1,62 @@
+﻿<Window x:Class="View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:View"
+        mc:Ignorable="d"
+        Title="OpenSenseViewer" Height="671.414" Width="1055.966" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}" Icon="icons/logo.png">
+
+    <Border CornerRadius="20" Background="Transparent">
+
+        <Grid Margin="0,2,2,0" Cursor="" Background="#FF2E2E2E">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" ></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!-- Header-->
+
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition Width="25"></ColumnDefinition>
+                    <ColumnDefinition Width="25"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25" ></RowDefinition>
+                </Grid.RowDefinitions>
+</Grid>
+
+            <!--Main-->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="3*"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <!--Menueband-->
+                <Grid Grid.Column="0" Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                     <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <GroupBox x:Name="group_sensors" Grid.Column="2" Content="" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0"/>
+
+
+                </Grid>
+                
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>
