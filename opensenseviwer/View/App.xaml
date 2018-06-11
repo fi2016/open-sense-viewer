@@ -35,6 +35,17 @@
             <Setter Property="FontSize" Value="20"/>
         </Style>
 
+        <Style TargetType="{x:Type Button}" >
+            <Setter Property="FontFamily" Value="Tw Cen MT Condensed Extra Bold"/>
+            <Setter Property="FontSize" Value="20"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="Red"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
 
 
     </Application.Resources>

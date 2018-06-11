@@ -33,15 +33,5 @@ namespace View
         {
             this.WindowState = WindowState.Minimized;
         }
-
-        private void button_drag_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
-        }
-
-        private void button_drag_MouseLeftButtonDown(object sender, RoutedEventArgs e)
-        {
-            this.DragMove();
-        }
     }
 }
