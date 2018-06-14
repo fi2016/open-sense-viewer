@@ -19,6 +19,7 @@ namespace View
     /// </summary>
     public partial class Login : Window
     {
+        ViewModel.VMMainWindow vm;
         public Login()
         {
             InitializeComponent();
@@ -42,6 +43,11 @@ namespace View
         private void button_drag_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
             this.DragMove();
+        }
+
+        private void button_connect_Click(object sender, RoutedEventArgs e)
+        {
+            vm.login(textbox_nickname.Text,textbox_password.Password.ToString(),textbox_platform.Text);
         }
     }
 }

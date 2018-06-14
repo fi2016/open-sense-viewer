@@ -19,3 +19,9 @@ H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\obj\Debug\View.pdb
 H:\CSHARP\Projekt\opensenseviewer\opensenseviwer\View\bin\Debug\View.exe.config
 H:\CSHARP\Projekt\opensenseviewer\opensenseviwer\View\obj\Debug\View.exe
 H:\CSHARP\Projekt\opensenseviewer\opensenseviwer\View\obj\Debug\View.pdb
+H:\CSHARP\Projekt\opensenseviewer\opensenseviwer\View\obj\Debug\View.csprojResolveAssemblyReference.cache
+H:\CSHARP\Projekt\opensenseviewer\opensenseviwer\View\obj\Debug\Login.g.cs
+H:\CSHARP\Projekt\opensenseviewer\opensenseviwer\View\obj\Debug\MainWindow.g.cs
+H:\CSHARP\Projekt\opensenseviewer\opensenseviwer\View\obj\Debug\App.g.cs
+H:\CSHARP\Projekt\opensenseviewer\opensenseviwer\View\obj\Debug\View_MarkupCompile.cache
+H:\CSHARP\Projekt\opensenseviewer\opensenseviwer\View\obj\Debug\View_MarkupCompile.lref

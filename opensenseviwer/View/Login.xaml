@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
+        xmlns:vm="clr-namespace:ViewModel;assembly=ViewModel"
         mc:Ignorable="d"
         Title="Login" Height="300" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowDrop="True" Icon="icons/logo.png" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}">
 
@@ -63,10 +64,10 @@
 
                 <StackPanel Grid.Column="0" Grid.Row="2">
                     <Label x:Name="label_platform_fix" Style="{StaticResource label}" Content="Platform:"/>
-                    <TextBox x:Name="textbox_platform" Style="{StaticResource textbox}"/>
+                    <TextBox x:Name="textbox_platform" Style="{StaticResource textbox}" />
                 </StackPanel>
 
-                <Button x:Name="button_connect" Content="connect" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Center" Padding="5"/>
+                <Button x:Name="button_connect" Content="connect" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Center" Padding="5" Click="button_connect_Click"/>
             </Grid>
 
 
