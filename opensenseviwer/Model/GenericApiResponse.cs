@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Model
+﻿namespace Model
 {
     class GenericApiResponse
     {
@@ -14,17 +8,17 @@ namespace Model
 
         public string Status
         {
-            get{return status;}
+            get { return status; }
         }
 
         public int Id
         {
-            get{return id;}
+            get { return id; }
         }
 
         public string Message
         {
-            get{return message;}
+            get { return message; }
         }
     }
 }
