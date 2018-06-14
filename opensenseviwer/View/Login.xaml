@@ -7,12 +7,13 @@
         mc:Ignorable="d"
         Title="Login" Height="406" Width="312" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowDrop="True" Icon="icons/logo.png" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" AllowsTransparency="True">
 
-    <Border CornerRadius="15" BorderBrush="Transparent">
+    <Border CornerRadius="10" BorderBrush="Transparent">
         <Border.Background>
             <SolidColorBrush Color="{DynamicResource background_DarkGrey}"/>
         </Border.Background>
 
-        <Grid Margin="5">
+        <Grid Margin="0,2,2,0" Cursor="">
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>

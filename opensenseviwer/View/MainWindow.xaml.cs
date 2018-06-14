@@ -35,5 +35,17 @@ namespace View
         {
             this.WindowState = WindowState.Minimized;
         }
+
+        private void Button_MenuOpen_Click(object sender, RoutedEventArgs e)
+        {
+            Button_MenuOpen.Visibility = Visibility.Collapsed;
+            Button_MenuClose.Visibility = Visibility.Visible;
+        }
+
+        private void Button_MenuClose_Click(object sender, RoutedEventArgs e)
+        {
+            Button_MenuOpen.Visibility = Visibility.Visible;
+            Button_MenuClose.Visibility = Visibility.Collapsed;
+        }
     }
 }

@@ -16,3 +16,9 @@ H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\obj\Debug\View.Properties.Reso
 H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\obj\Debug\View.csproj.GenerateResource.Cache
 H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\obj\Debug\View.exe
 H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\obj\Debug\View.pdb
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.dll
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.Wpf.dll
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.pdb
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.xml
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.Wpf.pdb
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.Wpf.xml
