@@ -16,3 +16,6 @@ H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\obj\Debug\View.Properties.Reso
 H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\obj\Debug\View.csproj.GenerateResource.Cache
 H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\obj\Debug\View.exe
 H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\obj\Debug\View.pdb
+H:\CSHARP\Projekt\opensenseviewer\opensenseviwer\View\bin\Debug\View.exe.config
+H:\CSHARP\Projekt\opensenseviewer\opensenseviwer\View\obj\Debug\View.exe
+H:\CSHARP\Projekt\opensenseviewer\opensenseviwer\View\obj\Debug\View.pdb
