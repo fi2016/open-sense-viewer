@@ -1,38 +1,47 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Newtonsoft.Json;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model
 {
-    class API
+    class Api
     {
-        StreamWriter sw;
-        StreamReader sr;
+        private HttpWebRequest webRequest;
+        private HttpWebResponse webResponse;
+        private StreamWriter writer;
+        private StreamReader reader;
+        private string platform;
 
-            HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create("https://apps.mikolai-sebastian.de/api/v1/open_sense_viewer/auth");
+        private string Platform
+        {
+            get { return platform; }
+            set { platform = value; }
+        }
 
-            httpWebRequest.ContentType = "application/json";
-            httpWebRequest.Method = "POST";
+        public Api(string platform)
+        {
+            Platform = platform;
+        }
 
-            using (sw = new StreamWriter(httpWebRequest.GetRequestStream()))
+        public bool checkAuth(string username, string password)
+        {
+            webRequest = (HttpWebRequest)WebRequest.Create("https://apps.mikolai-sebastian.de/api/v1/open_sense_viewer/auth");
+            webRequest.ContentType = "application/json";
+            webRequest.Method = "POST";
+            writer = new StreamWriter(webRequest.GetRequestStream());
+            string requestJson = "{\"platform\":\"" + Platform + "\", \"username\":\"" + username + "\", \"password\":\"" + password + "\"}";
+            writer.Write(requestJson);
+            writer.Flush();
+            writer.Close();
+            webResponse = (HttpWebResponse)webRequest.GetResponse();
+            reader = new StreamReader(webRequest.GetRequestStream());
+            string responseJson = reader.ReadToEnd();
+            GenericApiResponse response = JsonConvert.DeserializeObject<GenericApiResponse>(responseJson);
+            if (response.Status.Equals("success") && response.Id == 200 && response.Message.Equals("Authorized"))
             {
-                string json = "{\"platform\":\"c9e5eb90-6c15-11e8-b35f-b0e87cb20b1d\", \"username\":\"admin\", \"password\":\"fi2016#\"}";
-
-                sw.Write(json);
-                sw.Flush();
-                sw.Close();
+                return true;
             }
-
-            HttpWebResponse httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-            using (sr = new StreamReader(httpResponse.GetResponseStream()))
-            {
-                var result = streamReader.ReadToEnd();
-                Console.WriteLine(result);
-            }
-            Console.ReadLine();
+            return false;
+        }
     }
 }
