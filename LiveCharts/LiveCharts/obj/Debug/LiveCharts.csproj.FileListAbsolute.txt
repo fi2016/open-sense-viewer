@@ -1,8 +1,0 @@
-H:\Aktuell\C#\opensenseviewer\LiveCharts\LiveCharts\bin\Debug\LiveCharts.exe.config
-H:\Aktuell\C#\opensenseviewer\LiveCharts\LiveCharts\obj\Debug\LiveCharts.csprojResolveAssemblyReference.cache
-H:\Aktuell\C#\opensenseviewer\LiveCharts\LiveCharts\obj\Debug\MainWindow.g.cs
-H:\Aktuell\C#\opensenseviewer\LiveCharts\LiveCharts\obj\Debug\App.g.cs
-H:\Aktuell\C#\opensenseviewer\LiveCharts\LiveCharts\obj\Debug\LiveCharts_MarkupCompile.cache
-H:\Aktuell\C#\opensenseviewer\LiveCharts\LiveCharts\obj\Debug\LiveCharts_MarkupCompile.lref
-H:\Aktuell\C#\opensenseviewer\LiveCharts\LiveCharts\obj\Debug\LiveCharts.exe
-H:\Aktuell\C#\opensenseviewer\LiveCharts\LiveCharts\obj\Debug\LiveCharts.pdb

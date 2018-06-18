@@ -59,18 +59,29 @@
 
             </Grid>
 
-            <!--Menue-->
+            <!--Menu-->
 
-            <Grid x:Name="GridMenu" Width="200" HorizontalAlignment="Left" Background="#FF2D2D30">
+            <Grid x:Name="GridMenu" Width="200" HorizontalAlignment="Left" Background="#FF2D2D30" Panel.ZIndex="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50"/>
-                    <RowDefinition/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Button x:Name="Button_MenuOpen" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Content=": : :" Click="Button_MenuOpen_Click"></Button>
-                <Button x:Name="Button_MenuClose" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Content=": : :" Click="Button_MenuClose_Click"></Button>
-                
+                <Button x:Name="Button_MenuOpen" Grid.Column="1" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Content=": : :" Click="Button_MenuOpen_Click"></Button>
+                <Button x:Name="Button_MenuClose" Grid.Column="1" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Content=": : :" Click="Button_MenuClose_Click"></Button>
+
+                <Button x:Name="Button_Charts" Grid.Column="1" Grid.Row="2" Style="{StaticResource menuoption}" Content="Charts"></Button>
             </Grid>
 
             <!--Main-->
@@ -83,9 +94,8 @@
                     <RowDefinition Height="3*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <!--
                 <StackPanel Grid.Column="0" Grid.Row="1">
-                    <lvc:CartesianChart Series="{Binding col}" Height="500">
+                    <lvc:CartesianChart Series="{Binding SeriesCollection}" Height="500">
                         <lvc:CartesianChart.AxisY>
                             <lvc:Axis Title="Sales" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
                         </lvc:CartesianChart.AxisY>
@@ -94,7 +104,7 @@
                         </lvc:CartesianChart.AxisX>
                     </lvc:CartesianChart>
                 </StackPanel>
-                -->
+                
 
             </Grid>
         </Grid>

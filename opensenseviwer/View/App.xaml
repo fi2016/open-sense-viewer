@@ -52,6 +52,13 @@
             <Setter Property="BorderBrush" Value="{x:Null}"/>
         </Style>
 
+        <Style x:Key="menuoption" TargetType="{x:Type Button}">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            
+        </Style>
+
 
 
 
