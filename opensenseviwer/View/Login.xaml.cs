@@ -21,6 +21,7 @@ namespace View
     /// </summary>
     public partial class Login : Window
     {
+        private ViewModel.ViewModel vm;
         public Login()
         {
             InitializeComponent();
@@ -34,6 +35,11 @@ namespace View
         private void button_minimize_Click(object sender, RoutedEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
+        }
+
+        private void button_connect_Click(object sender, RoutedEventArgs e)
+        {
+            vm.login(textbox_nickname.Text,textbox_password.Password,textbox_platform.Text);
         }
     }
 }
