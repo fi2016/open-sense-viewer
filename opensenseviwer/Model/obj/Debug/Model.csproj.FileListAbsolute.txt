@@ -1,0 +1,5 @@
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\bin\Debug\Model.dll
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\bin\Debug\Model.pdb
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.dll
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.pdb
