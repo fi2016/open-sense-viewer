@@ -63,7 +63,6 @@
 
             <Grid x:Name="GridMenu" Width="200" HorizontalAlignment="Left" Background="#FF2D2D30" Panel.ZIndex="5">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -78,14 +77,16 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
 
-                <Button x:Name="Button_MenuOpen" Grid.Column="1" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Content=": : :" Click="Button_MenuOpen_Click"></Button>
-                <Button x:Name="Button_MenuClose" Grid.Column="1" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Content=": : :" Click="Button_MenuClose_Click"></Button>
+                <Button x:Name="Button_MenuOpen" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Content=": : :" Click="Button_MenuOpen_Click"></Button>
+                <Button x:Name="Button_MenuClose" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Content=": : :" Click="Button_MenuClose_Click"></Button>
 
-                <Button x:Name="Button_Charts" Grid.Column="1" Grid.Row="2" Style="{StaticResource menuoption}" Content="Charts"></Button>
+                <Button x:Name="Button_Dashboard" Grid.Row="2" Style="{StaticResource menuoption}" Content="Dashboard"/>
+                <Button x:Name="Button_Charts" Grid.Row="3" Style="{StaticResource menuoption}" Content="Charts"/>
+                <Button x:Name="Button_Profil" Grid.Row="4" Style="{StaticResource menuoption}" Content="Profil"/>
             </Grid>
 
             <!--Main-->
-            <Grid>
+            <Grid Margin="50,25,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
@@ -94,7 +95,35 @@
                     <RowDefinition Height="3*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <StackPanel Grid.Column="0" Grid.Row="1">
+                <!-- Auswahl der Sensoren -->
+
+                <Grid>
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="5px"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="5px"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                     <Grid.RowDefinitions>
+                        <RowDefinition Height="35"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="5px"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Separator Grid.Row="1" Grid.RowSpan="3" Grid.Column="1"/>
+
+
+                    <Label x:Name="label_Sensor" Grid.Row="0" Grid.Column="1" Content="Sensors" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+
+                    
+                    <Separator Grid.Row="2" Grid.ColumnSpan="5" />
+                    
+                  </Grid>
+
+
+
+            <StackPanel Grid.Column="0" Grid.Row="1">
                     <lvc:CartesianChart Series="{Binding SeriesCollection}" Height="500">
                         <lvc:CartesianChart.AxisY>
                             <lvc:Axis Title="Sales" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
@@ -104,7 +133,7 @@
                         </lvc:CartesianChart.AxisX>
                     </lvc:CartesianChart>
                 </StackPanel>
-                
+
 
             </Grid>
         </Grid>
