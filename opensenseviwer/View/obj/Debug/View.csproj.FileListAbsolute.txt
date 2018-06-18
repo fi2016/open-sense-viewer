@@ -22,3 +22,6 @@ H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.pdb
 H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.xml
 H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.Wpf.pdb
 H:\Aktuell\C#\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.Wpf.xml
+H:\CSHARP\opensenseviewer\opensenseviwer\View\bin\Debug\View.exe.config
+H:\CSHARP\opensenseviewer\opensenseviwer\View\obj\Debug\View.exe
+H:\CSHARP\opensenseviewer\opensenseviwer\View\obj\Debug\View.pdb
