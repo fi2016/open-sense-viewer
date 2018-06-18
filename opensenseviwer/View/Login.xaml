@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:ViewModel;assembly=ViewModel"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
         Title="Login" Height="300" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowDrop="True" Icon="icons/logo.png" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}">
@@ -66,7 +67,7 @@
                     <TextBox x:Name="textbox_platform" Style="{StaticResource textbox}"/>
                 </StackPanel>
 
-                <Button x:Name="button_connect" Content="connect" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Center" Padding="5"/>
+                <Button x:Name="button_connect" Content="connect" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Center" Padding="5" Click="button_connect_Click"/>
             </Grid>
 
 

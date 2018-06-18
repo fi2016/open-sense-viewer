@@ -4,7 +4,7 @@ using System.Net;
 
 namespace Model
 {
-    class Api
+    public class Api
     {
         private HttpWebRequest webRequest;
         private HttpWebResponse webResponse;
