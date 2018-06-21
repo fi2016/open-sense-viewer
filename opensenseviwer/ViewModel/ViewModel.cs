@@ -10,19 +10,23 @@ namespace ViewModel
 {
     public class ViewModel
     {
-        Model.Api api;
-        public void login(String username, String password, String platform)
+        
+        public Boolean login(String username, String password, String platform)
         {
+            Model.Api api = new Model.Api(platform);
             Console.WriteLine("HALLO");
-            if(api.checkAuth(username, password))
+            if (api.checkAuth(username, password))
             {
-
+                Console.WriteLine("Ich wurde angemeldet");
+                savePlatform(platform);
+                return true;
             }
             else
             {
                 MessageBox.Show("Anmeldung fehlgeschlagen!");
+                savePlatform(platform);
+                return false;
             }
-            savePlatform(platform);
         }
         private void savePlatform(String platform)
         {

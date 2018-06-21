@@ -11,8 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using LiveCharts;
-using LiveCharts.Wpf;
 
 namespace View
 {
@@ -21,7 +19,7 @@ namespace View
     /// </summary>
     public partial class Login : Window
     {
-        private ViewModel.ViewModel vm;
+        private ViewModel.ViewModel vm = new ViewModel.ViewModel();
         public Login()
         {
             InitializeComponent();
@@ -37,14 +35,24 @@ namespace View
             this.WindowState = WindowState.Minimized;
         }
 
-        private void button_connect_Click(object sender, RoutedEventArgs e)
-        {
-            vm.login(textbox_nickname.Text,textbox_password.Password,textbox_platform.Text);
-        }
-
         private void button_drag_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-              this.DragMove();
+            this.DragMove();
+        }
+
+        private void button_drag_MouseLeftButtonDown(object sender, RoutedEventArgs e)
+        {
+            this.DragMove();
+        }
+
+        private void button_connect_Click(object sender, RoutedEventArgs e)
+        {
+            if(vm.login(textbox_nickname.Text, textbox_password.Password, textbox_platform.Text))
+            {
+                this.Close();
+                MainWindow mw = new MainWindow();
+                mw.Activate();
+            }
         }
     }
 }
