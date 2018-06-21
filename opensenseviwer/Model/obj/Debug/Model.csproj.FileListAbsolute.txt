@@ -1,0 +1,7 @@
+H:\CSHARP\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+H:\CSHARP\opensenseviewer\opensenseviwer\Model\bin\Debug\Model.dll
+H:\CSHARP\opensenseviewer\opensenseviwer\Model\bin\Debug\Model.pdb
+H:\CSHARP\opensenseviewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.dll
+H:\CSHARP\opensenseviewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.xml
+H:\CSHARP\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.dll
+H:\CSHARP\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.pdb

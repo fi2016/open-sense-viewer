@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Net;
 
@@ -30,12 +31,15 @@ namespace Model
             webRequest.Method = "POST";
             writer = new StreamWriter(webRequest.GetRequestStream());
             string requestJson = "{\"platform\":\"" + Platform + "\", \"username\":\"" + username + "\", \"password\":\"" + password + "\"}";
+            //FEHLER IN DER API
+            Console.WriteLine(requestJson);
             writer.Write(requestJson);
             writer.Flush();
             writer.Close();
             webResponse = (HttpWebResponse)webRequest.GetResponse();
-            reader = new StreamReader(webRequest.GetRequestStream());
+            reader = new StreamReader(webResponse.GetResponseStream());
             string responseJson = reader.ReadToEnd();
+            Console.WriteLine(responseJson);
             GenericApiResponse response = JsonConvert.DeserializeObject<GenericApiResponse>(responseJson);
             if (response.Status.Equals("success") && response.Id == 200 && response.Message.Equals("Authorized"))
             {
