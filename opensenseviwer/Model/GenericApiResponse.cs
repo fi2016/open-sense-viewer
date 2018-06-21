@@ -8,17 +8,41 @@
 
         public string Status
         {
-            get { return status; }
+            get
+            {
+                return status;
+            }
+
+            set
+            {
+                status = value;
+            }
         }
 
         public int Id
         {
-            get { return id; }
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
         }
 
         public string Message
         {
-            get { return message; }
+            get
+            {
+                return message;
+            }
+
+            set
+            {
+                message = value;
+            }
         }
     }
 }

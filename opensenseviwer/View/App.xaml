@@ -20,14 +20,14 @@
             <Setter Property="BorderBrush" Value="{x:Null}"/>
         </Style>
 
-        <Style TargetType="{x:Type Label}">
+        <Style x:Key="label" TargetType="{x:Type Label}">
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Background" Value="{x:Null}"/>
             <Setter Property="FontFamily" Value="Tw Cen MT Condensed Extra Bold"/>
             <Setter Property="FontSize" Value="20"/>
         </Style>
 
-        <Style TargetType="{x:Type TextBox}">
+        <Style x:Key="textbox" TargetType="{x:Type TextBox}">
             <Setter Property="FontFamily" Value="Tw Cen MT Condensed"/>
             <Setter Property="FontSize" Value="20"/>
         </Style>
