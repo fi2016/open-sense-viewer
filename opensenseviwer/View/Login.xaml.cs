@@ -47,7 +47,15 @@ namespace View
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            
+            try
+            {
+                this.DragMove();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

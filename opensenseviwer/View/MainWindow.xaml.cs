@@ -88,5 +88,18 @@ namespace View
             Button_MenuOpen.Visibility = Visibility.Visible;
             Button_MenuClose.Visibility = Visibility.Collapsed;
         }
+
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                this.DragMove();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

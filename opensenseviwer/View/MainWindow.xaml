@@ -40,7 +40,7 @@
 
         <Grid>
             <!-- Header-->
-            <Grid Height="25" VerticalAlignment="Top" Background="#FF2D2D30">
+            <Grid Height="25" VerticalAlignment="Top" Background="#FF2D2D30" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition Width="25"></ColumnDefinition>
