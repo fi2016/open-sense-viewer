@@ -41,5 +41,10 @@ namespace View
         {
             vm.login(textbox_nickname.Text,textbox_password.Password,textbox_platform.Text);
         }
+
+        private void button_drag_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+              this.DragMove();
+        }
     }
 }
