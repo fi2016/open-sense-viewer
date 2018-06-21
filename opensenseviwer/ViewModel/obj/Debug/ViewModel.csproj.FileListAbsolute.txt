@@ -7,3 +7,12 @@ H:\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\Model.pdb
 H:\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\Newtonsoft.Json.xml
 H:\CSHARP\opensenseviewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.dll
 H:\CSHARP\opensenseviewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.pdb
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\ViewModel.dll
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\ViewModel.pdb
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\Model.dll
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\Newtonsoft.Json.dll
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\Model.pdb
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\Newtonsoft.Json.xml
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.dll
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.pdb
