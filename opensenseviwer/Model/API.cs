@@ -44,10 +44,5 @@ namespace Model
             }
             return false;
         }
-
-        public void read()
-        {
-
-        }
     }
 }
