@@ -4,23 +4,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
+        xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Title="OpenSenseViewer" Height="671.414" Width="1055.966" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}" Icon="icons/logo.png">
+        Title="OpenSenseViewer" Height="671.414" Width="1055.966" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}" Icon="icons/logo.png" AllowsTransparency="True">
 
-    <Border CornerRadius="20" Background="Transparent">
+    <Window.Resources>
+        <Storyboard x:Key="MenuOpen">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Window.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="50"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
 
-        <Grid Margin="0,2,2,0" Cursor="" Background="#FF2E2E2E">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="25" ></RowDefinition>
-                <RowDefinition></RowDefinition>
-            </Grid.RowDefinitions>
+        <Storyboard x:Key="MenuClose">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Window.Width)" Storyboard.TargetName="GridMenu">
+                <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="50"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
 
+    </Window.Resources>
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Button_MenuOpen">
+            <BeginStoryboard Storyboard="{StaticResource MenuOpen}"/>
+        </EventTrigger>
+
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Button_MenuClose">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
+        </EventTrigger>
+
+    </Window.Triggers>
+
+    <Border CornerRadius="10" BorderBrush="Transparent" Background="#FF424242">
+
+        <Grid>
             <!-- Header-->
-
-            <Grid Grid.Column="0">
+            <Grid Height="25" VerticalAlignment="Top" Background="#FF2D2D30">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition Width="25"></ColumnDefinition>
@@ -29,10 +49,40 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="25" ></RowDefinition>
                 </Grid.RowDefinitions>
-</Grid>
+
+                <Button Style="{StaticResource icon}" x:Name="button_minimize" Content="_" Grid.Column="1" Click="button_minimize_Click"/>
+                <Button Style="{StaticResource icon}" x:Name="button_exit" Content="X" Grid.Column="2" Click="button_exit_Click"/>
+
+            </Grid>
+
+            <!--Menu-->
+
+            <Grid x:Name="GridMenu" Width="200" HorizontalAlignment="Left" Background="#FF2D2D30" Panel.ZIndex="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Button x:Name="Button_MenuOpen" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Content=": : :" Click="Button_MenuOpen_Click"></Button>
+                <Button x:Name="Button_MenuClose" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Content=": : :" Click="Button_MenuClose_Click"></Button>
+
+                <Button x:Name="Button_Dashboard" Grid.Row="2" Style="{StaticResource menuoption}" Content="Dashboard"/>
+                <Button x:Name="Button_Charts" Grid.Row="3" Style="{StaticResource menuoption}" Content="Charts"/>
+                <Button x:Name="Button_Profil" Grid.Row="4" Style="{StaticResource menuoption}" Content="Profil"/>
+            </Grid>
 
             <!--Main-->
-            <Grid Grid.Row="1">
+            <Grid Margin="50,25,0,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                 </Grid.ColumnDefinitions>
@@ -40,23 +90,46 @@
                     <RowDefinition Height="1*"></RowDefinition>
                     <RowDefinition Height="3*"></RowDefinition>
                 </Grid.RowDefinitions>
-                
-                <!--Menueband-->
-                <Grid Grid.Column="0" Grid.Row="0">
-                    <Grid.ColumnDefinitions>
-                     <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                        <ColumnDefinition/>
-                    </Grid.ColumnDefinitions>
-                    
-                    <GroupBox x:Name="group_sensors" Grid.Column="2" Content="" BorderBrush="{x:Null}" Foreground="{x:Null}" BorderThickness="0"/>
 
+                <!-- Auswahl der Sensoren -->
+
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="5px"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="5px"></ColumnDefinition>
+                        <ColumnDefinition></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="35"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="5px"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <!--Vertikale Seperatoren einfügen-->
+
+                    <Label x:Name="label_Sensor" Grid.Row="0" Grid.Column="1" Content="Sensors" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+
+
+                    <Separator Grid.Row="2" Grid.ColumnSpan="5" />
 
                 </Grid>
+
+                <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,0,0,10">
+                    <lvc:CartesianChart Series="{Binding SeriesCollection}" Height="500">
+                        <lvc:CartesianChart.AxisY>
+                            <lvc:Axis Title="Temperature" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
+                        </lvc:CartesianChart.AxisY>
+
+                        <lvc:CartesianChart.AxisX>
+                            <lvc:Axis Title="Month" Labels="{Binding Labels}"></lvc:Axis>
+                        </lvc:CartesianChart.AxisX>
+                    </lvc:CartesianChart>
+                </StackPanel>
                 
             </Grid>
-
         </Grid>
+
     </Border>
 </Window>
