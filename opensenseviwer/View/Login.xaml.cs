@@ -19,7 +19,7 @@ namespace View
     /// </summary>
     public partial class Login : Window
     {
-        private ViewModel.ViewModel vm;
+        private ViewModel.ViewModel vm = new ViewModel.ViewModel();
         public Login()
         {
             InitializeComponent();
@@ -47,7 +47,12 @@ namespace View
 
         private void button_connect_Click(object sender, RoutedEventArgs e)
         {
-            vm.login(textbox_nickname.Text, textbox_password.Password, textbox_platform.Text);
+            if(vm.login(textbox_nickname.Text, textbox_password.Password, textbox_platform.Text))
+            {
+                this.Close();
+                MainWindow mw = new MainWindow();
+                mw.Activate();
+            }
         }
     }
 }

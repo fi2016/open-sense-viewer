@@ -15,7 +15,7 @@ namespace Model
         StreamReader sr;
         
 
-        public getData(String sensor)
+        public void getData(String sensor)
         {
              httpWebRequest = (HttpWebRequest)WebRequest.Create("https://apps.mikolai-sebastian.de/api/v1/open_sense_viewer/auth");
 
