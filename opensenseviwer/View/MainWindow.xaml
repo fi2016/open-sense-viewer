@@ -83,7 +83,13 @@
                 <Button x:Name="Button_MenuOpen" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Content=": : :" Click="Button_MenuOpen_Click"></Button>
                 <Button x:Name="Button_MenuClose" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Content=": : :" Click="Button_MenuClose_Click"></Button>
 
-                <Button x:Name="Button_Dashboard" Grid.Row="2" Style="{StaticResource menuoption}" Content="Dashboard"/>
+                <Button x:Name="Button_Dashboard" Grid.Row="2" Style="{StaticResource menuoption}">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="icons/pie-chart-2.png" Style="{StaticResource menuicon}" />
+                        <TextBlock>Dashboard</TextBlock>
+                    </StackPanel>
+                </Button> 
+                
                 <Button x:Name="Button_Charts" Grid.Row="3" Style="{StaticResource menuoption}" Content="Charts"/>
                 <Button x:Name="Button_Profil" Grid.Row="4" Style="{StaticResource menuoption}" Content="Profil"/>
             </Grid>
