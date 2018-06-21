@@ -13,6 +13,7 @@
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Window.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="50"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="200"/>
+                 
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
 
@@ -33,6 +34,12 @@
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Button_MenuClose">
             <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
         </EventTrigger>
+
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="Button_MenuClose">
+            <BeginStoryboard Storyboard="{StaticResource MenuClose}"/>
+        </EventTrigger>
+
+
 
     </Window.Triggers>
 
@@ -109,14 +116,16 @@
 
                     <!--Vertikale Seperatoren einfügen-->
 
-                    <Label x:Name="label_Sensor" Grid.Row="0" Grid.Column="1" Content="Sensors" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
-
+                    <Label Style="{StaticResource label}"  x:Name="label_Sensor" Grid.Row="0" Grid.Column="2" Content="Sensors" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                    <GroupBox x:Name="groupBox_sensors" Grid.Row="1" Grid.Column="2" BorderThickness="0"/>
 
                     <Separator Grid.Row="2" Grid.ColumnSpan="5" />
+                    <ListBox x:Name="listBox" Grid.Column="4" HorizontalAlignment="Stretch" Grid.Row="1" Grid.RowSpan="2"  />
+
 
                 </Grid>
 
-                <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,0,0,10">
+                <StackPanel Grid.Column="0" Grid.Row="1">
                     <lvc:CartesianChart Series="{Binding SeriesCollection}" Height="500">
                         <lvc:CartesianChart.AxisY>
                             <lvc:Axis Title="Temperature" LabelFormatter="{Binding YFormatter}"></lvc:Axis>

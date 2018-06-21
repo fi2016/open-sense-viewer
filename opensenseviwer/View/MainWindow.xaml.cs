@@ -35,7 +35,7 @@ namespace View
                 },
                 new LineSeries
                 {
-                    Title = "humidity",
+                    Title = "humidity", 
                     Values = new ChartValues<double> { 97, 95, 99, 88 , 89 },
                     PointGeometry = null
                 }
@@ -60,7 +60,6 @@ namespace View
 
             DataContext = this;
 
-            
         }
 
         public SeriesCollection SeriesCollection { get; set; }
