@@ -6,7 +6,7 @@
         xmlns:vm="clr-namespace:ViewModel;assembly=ViewModel"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="Login" Height="339" Width="284" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowDrop="True" Icon="icons/logo.png" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" AllowsTransparency="True">
+        Title="Login" Height="339" Width="284" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowDrop="True" Icon="icons/logo.png" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" AllowsTransparency="True" MouseLeftButtonDown="Window_MouseLeftButtonDown">
 
     <Border CornerRadius="15" BorderBrush="Transparent">
         <Border.Background>
@@ -34,7 +34,6 @@
                     <RowDefinition Height="25" ></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <Button x:Name="button_drag" Grid.Column="0" Grid.ColumnSpan="3" Background="{x:Null}" BorderBrush="{x:Null}"/>
                 <Button Style="{StaticResource icon}" x:Name="button_minimize" Content="_" Grid.Column="1" Click="button_minimize_Click"/>
                 <Button Style="{StaticResource icon}" x:Name="button_exit" Content="X" Grid.Column="2" Click="button_exit_Click"/>
 
