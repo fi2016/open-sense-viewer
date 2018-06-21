@@ -49,9 +49,9 @@ namespace View
         {
             if(vm.login(textbox_nickname.Text, textbox_password.Password, textbox_platform.Text))
             {
-                this.Close();
+                this.Hide();
                 MainWindow mw = new MainWindow();
-                mw.Activate();
+                mw.Show();
             }
         }
     }

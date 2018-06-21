@@ -22,3 +22,9 @@ H:\CSHARP\opensenseviewer\opensenseviwer\View\obj\Debug\View.Properties.Resource
 H:\CSHARP\opensenseviewer\opensenseviwer\View\obj\Debug\View.csproj.GenerateResource.Cache
 H:\CSHARP\opensenseviewer\opensenseviwer\View\obj\Debug\View.exe
 H:\CSHARP\opensenseviewer\opensenseviwer\View\obj\Debug\View.pdb
+H:\CSHARP\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.dll
+H:\CSHARP\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.Wpf.dll
+H:\CSHARP\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.pdb
+H:\CSHARP\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.xml
+H:\CSHARP\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.Wpf.pdb
+H:\CSHARP\opensenseviewer\opensenseviwer\View\bin\Debug\LiveCharts.Wpf.xml
