@@ -22,47 +22,12 @@ namespace View
     /// </summary>
     public partial class MainWindow : Window
     {
+        ViewModel.ViewModel vm;
         public MainWindow(ViewModel.ViewModel vm)
         {
             InitializeComponent();
-            ChartValues<float> temp = vm.GetData("a43ae11b-6c16-11e8-b35f-b0e87cb20b1d");
-            ChartValues<float> hum = vm.GetData("482a98b4-6cc2-11e8-b35f-b0e87cb20b1d");
-            SeriesCollection = new SeriesCollection
-            {
-                new LineSeries
-                {
-                    Title = "temperature",
-                    Values = temp,
-                    PointGeometry = null
-                },
-                new LineSeries
-                {
-                    Title = "himidity",
-                    Values = hum,
-                    PointGeometry = null
-                }
-            };
-
-            Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
-            YFormatter = value => value.ToString(".00 °C");
-
-            //modifying the series collection will animate and update the chart
-            //SeriesCollection.Add(new LineSeries
-            //{
-            //    Title = "Series 4",
-            //    Values = new ChartValues<double> { 5, 3, 2, 4 },
-            //    LineSmoothness = 0, //0: straight lines, 1: really smooth lines
-            //    PointGeometry = Geometry.Parse("m 25 70.36218 20 -28 -20 22 -8 -6 z"),
-            //    PointGeometrySize = 50,
-            //    PointForeground = Brushes.Gray
-            //});
-
-            //modifying any series values will also animate and update the chart
-           // SeriesCollection[3].Values.Add(5d);
-
-            DataContext = this;
-
-            
+            this.vm = vm;
+            einlesen("a43ae11b-6c16-11e8-b35f-b0e87cb20b1d", "482a98b4-6cc2-11e8-b35f-b0e87cb20b1d");
         }
 
         public SeriesCollection SeriesCollection { get; set; }
@@ -89,6 +54,34 @@ namespace View
         {
             Button_MenuOpen.Visibility = Visibility.Visible;
             Button_MenuClose.Visibility = Visibility.Collapsed;
+        }
+
+        private void einlesen(string humidSensor, string tempSensor)
+        {
+            ChartValues<float> temp = vm.GetData("a43ae11b-6c16-11e8-b35f-b0e87cb20b1d");
+            ChartValues<float> hum = vm.GetData("482a98b4-6cc2-11e8-b35f-b0e87cb20b1d");
+            //ChartValues<float> temp = vm.GetData("tempSensor");
+            //ChartValues<float> hum = vm.GetData("humidSensor");
+            SeriesCollection = new SeriesCollection
+            {
+                new LineSeries
+                {
+                    Title = "temperature",
+                    Values = temp,
+                    PointGeometry = null
+                },
+                new LineSeries
+                {
+                    Title = "himidity",
+                    Values = hum,
+                    PointGeometry = null
+                }
+            };
+
+            Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
+            YFormatter = value => value.ToString(".00");
+
+            DataContext = this;
         }
     }
 }
