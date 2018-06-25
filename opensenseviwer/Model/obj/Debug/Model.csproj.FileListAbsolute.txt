@@ -5,3 +5,10 @@ H:\CSHARP\opensenseviewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.dll
 H:\CSHARP\opensenseviewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.xml
 H:\CSHARP\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.dll
 H:\CSHARP\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.pdb
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\bin\Debug\Model.dll
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\bin\Debug\Model.pdb
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.dll
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.xml
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.dll
+H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.pdb

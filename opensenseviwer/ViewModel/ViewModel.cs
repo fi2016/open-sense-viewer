@@ -37,18 +37,25 @@ namespace ViewModel
         }
 
        public ChartValues<float> GetData(string sensor)
-        {
+       {
             ChartValues<float> values = new ChartValues<float>();
-            List <SensorData<Sensor>> temp = api.GetData(sensor);
-            for (int i = 0; i < 2000; i++)
+            try
             {
-                float f = temp[i].Value;
-                if (f > 4)
+                List<SensorData<Sensor>> temp = api.GetData(sensor);
+                for (int i = 0; i < 2000; i++)
                 {
-                    values.Add(f);
+                    float f = temp[i].Value;
+                    if (f > 4)
+                    {
+                        values.Add(f);
+                    }
                 }
             }
+            catch(NullReferenceException)
+            {
+                MessageBox.Show("Es konnten keine Daten aus dem Sensor ausgelesen werden");
+            }
             return values;
-        }
+       }
     }
 }
