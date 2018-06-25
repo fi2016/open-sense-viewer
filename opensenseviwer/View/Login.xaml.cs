@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ViewModel;
 
 namespace View
 {
@@ -20,6 +21,7 @@ namespace View
     public partial class Login : Window
     {
         private ViewModel.ViewModel vm = new ViewModel.ViewModel();
+
         public Login()
         {
             InitializeComponent();
@@ -47,10 +49,10 @@ namespace View
 
         private void button_connect_Click(object sender, RoutedEventArgs e)
         {
-            if(vm.login(textbox_nickname.Text, textbox_password.Password, textbox_platform.Text))
+            if(vm.Login(textbox_nickname.Text, textbox_password.Password, textbox_platform.Text))
             {
                 this.Hide();
-                MainWindow mw = new MainWindow();
+                MainWindow mw = new MainWindow(vm);
                 mw.Show();
             }
         }

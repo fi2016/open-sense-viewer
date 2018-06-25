@@ -7,3 +7,6 @@ H:\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\Model.pdb
 H:\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\Newtonsoft.Json.xml
 H:\CSHARP\opensenseviewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.dll
 H:\CSHARP\opensenseviewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.pdb
+H:\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\LiveCharts.dll
+H:\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\LiveCharts.pdb
+H:\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\LiveCharts.xml

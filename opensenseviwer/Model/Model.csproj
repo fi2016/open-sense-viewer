@@ -46,8 +46,11 @@
   <ItemGroup>
     <Compile Include="Api.cs" />
     <Compile Include="Class.cs" />
+    <Compile Include="DataApiResponse.cs" />
     <Compile Include="GenericApiResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sensor.cs" />
+    <Compile Include="SensorData.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
