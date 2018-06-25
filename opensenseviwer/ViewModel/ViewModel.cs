@@ -1,38 +1,54 @@
-﻿using System;
+﻿using Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using LiveCharts;
 
 namespace ViewModel
 {
     public class ViewModel
     {
-        
-        public Boolean login(String username, String password, String platform)
+        Model.Api api;
+
+        public Boolean Login(String username, String password, String platform)
         {
-            Model.Api api = new Model.Api(platform);
-            Console.WriteLine("HALLO");
-            if (api.checkAuth(username, password))
+            api = new Model.Api(platform);
+            if (api.CheckAuth(username, password))
             {
-                Console.WriteLine("Ich wurde angemeldet");
-                savePlatform(platform);
+                //SavePlatform(platform);
                 return true;
             }
             else
             {
                 MessageBox.Show("Anmeldung fehlgeschlagen!");
-                savePlatform(platform);
+                //SavePlatform(platform);
                 return false;
             }
         }
-        private void savePlatform(String platform)
+        private void SavePlatform(String platform)
         {
             StreamWriter sw;
             sw = new StreamWriter("platform.json");
             sw.WriteLine(platform);
+        }
+
+       public ChartValues<float> GetData(string sensor)
+        {
+            ChartValues<float> values = new ChartValues<float>();
+            List <SensorData<Sensor>> temp = api.GetData(sensor);
+            for (int i = 0; i < 2000; i++)
+            {
+                float f = temp[i].Value;
+                if (f > 4)
+                {
+                    values.Add(f);
+                }
+            }
+            return values;
         }
     }
 }

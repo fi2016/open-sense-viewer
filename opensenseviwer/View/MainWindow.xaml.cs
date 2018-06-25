@@ -22,21 +22,23 @@ namespace View
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(ViewModel.ViewModel vm)
         {
             InitializeComponent();
-
+            ChartValues<float> temp = vm.GetData("a43ae11b-6c16-11e8-b35f-b0e87cb20b1d");
+            ChartValues<float> hum = vm.GetData("482a98b4-6cc2-11e8-b35f-b0e87cb20b1d");
             SeriesCollection = new SeriesCollection
             {
                 new LineSeries
                 {
                     Title = "temperature",
-                    Values = new ChartValues<double> { 20, 25, 21, 23 ,19 }
+                    Values = temp,
+                    PointGeometry = null
                 },
                 new LineSeries
                 {
-                    Title = "humidity",
-                    Values = new ChartValues<double> { 97, 95, 99, 88 , 89 },
+                    Title = "himidity",
+                    Values = hum,
                     PointGeometry = null
                 }
             };
