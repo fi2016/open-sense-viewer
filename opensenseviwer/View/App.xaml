@@ -24,7 +24,7 @@
             <Setter Property="Foreground" Value="White"/>
             <Setter Property="Background" Value="{x:Null}"/>
             <Setter Property="FontFamily" Value="Tw Cen MT Condensed Extra Bold"/>
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="18"/>
         </Style>
 
         <Style x:Key="textbox" TargetType="{x:Type TextBox}">
