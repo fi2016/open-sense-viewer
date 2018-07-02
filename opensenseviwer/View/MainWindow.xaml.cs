@@ -83,5 +83,10 @@ namespace View
 
             DataContext = this;
         }
+
+        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
+        }
     }
 }
