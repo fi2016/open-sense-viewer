@@ -40,7 +40,7 @@
 
         <Grid>
             <!-- Header-->
-            <Grid Height="25" VerticalAlignment="Top" Background="#FF2D2D30">
+            <Grid Height="25" VerticalAlignment="Top" Background="#FF2D2D30" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition></ColumnDefinition>
                     <ColumnDefinition Width="25"></ColumnDefinition>
@@ -78,7 +78,7 @@
 
                 <Button x:Name="Button_Dashboard" Grid.Row="2" Style="{StaticResource menuoption}" Content="Dashboard"/>
                 <Button x:Name="Button_Charts" Grid.Row="3" Style="{StaticResource menuoption}" Content="Charts"/>
-                <Button x:Name="Button_Profil" Grid.Row="4" Style="{StaticResource menuoption}" Content="Profil"/>
+                <!-- <Button x:Name="Button_Profil" Grid.Row="4" Style="{StaticResource menuoption}" Content="Profil"/>-->
             </Grid>
 
             <!--Main-->
@@ -116,7 +116,7 @@
 
                 </Grid>
 
-                <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,0,0,10">
+                <StackPanel Grid.Column="0" Grid.Row="1">
                     <lvc:CartesianChart Series="{Binding SeriesCollection}" Height="500">
                         <lvc:CartesianChart.AxisY>
                             <lvc:Axis Title="Temperature" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
