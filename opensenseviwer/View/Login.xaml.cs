@@ -37,16 +37,6 @@ namespace View
             this.WindowState = WindowState.Minimized;
         }
 
-        private void button_drag_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
-        {
-            this.DragMove();
-        }
-
-        private void button_drag_MouseLeftButtonDown(object sender, RoutedEventArgs e)
-        {
-            this.DragMove();
-        }
-
         private void button_connect_Click(object sender, RoutedEventArgs e)
         {
             if(vm.Login(textbox_nickname.Text, textbox_password.Password, textbox_platform.Text))
@@ -55,6 +45,11 @@ namespace View
                 MainWindow mw = new MainWindow(vm);
                 mw.Show();
             }
+        }
+
+        private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            this.DragMove();
         }
     }
 }

@@ -6,7 +6,7 @@
         xmlns:vm="clr-namespace:ViewModel;assembly=ViewModel"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="Login" Height="350" Width="275" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowDrop="True" Icon="icons/logo.png" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" AllowsTransparency="True">
+        Title="Login" Height="350" Width="275" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowDrop="True" Icon="icons/logo.png" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" AllowsTransparency="True" MouseLeftButtonDown="Window_MouseLeftButtonDown">
 
     <Border CornerRadius="15" BorderBrush="Transparent">
         <Border.Background>
@@ -67,7 +67,7 @@
                     <TextBox Style="{StaticResource textbox}" x:Name="textbox_platform"/>
                 </StackPanel>
 
-                <Button x:Name="button_connect" Content="connect" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Center" Padding="5"/>
+                <Button x:Name="button_connect" Content="connect" Grid.Column="0" Grid.Row="4" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Center" Padding="5" Click="button_connect_Click"/>
             </Grid>
         </Grid>
     </Border>
