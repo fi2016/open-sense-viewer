@@ -92,7 +92,7 @@ namespace Model
                 //{
                     webRequest = (HttpWebRequest)WebRequest.Create("https://apps.mikolai-sebastian.de/api/v1/open_sense_viewer/data/get");
                     webRequest.ContentType = "application/json";
-                    webRequest.Method = "POS";
+                    webRequest.Method = "POST";
                     Console.WriteLine(Username);
                     writer = new StreamWriter(webRequest.GetRequestStream());
                     string requestJson = "{\"platform\":\"" + Platform + "\", \"username\":\"" + Username + "\", \"password\":\"" + Password + "\", \"sensor\":\"" + sensor + "\"}";

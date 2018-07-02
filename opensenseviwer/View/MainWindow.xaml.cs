@@ -88,5 +88,10 @@ namespace View
         {
             this.DragMove();
         }
+
+        private void Button_Credits_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Sebastian Mikolai\nFrank Baumeister\nCarina Jörg");
+        }
     }
 }
