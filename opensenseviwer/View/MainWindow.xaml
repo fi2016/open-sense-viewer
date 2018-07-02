@@ -113,11 +113,12 @@
 
 
                     <Separator Grid.Row="2" Grid.ColumnSpan="5" />
+                    <Button x:Name="buttonLoad" Content="Daten lesen" Grid.Column="2" Height="40" Grid.Row="1" VerticalAlignment="Top" HorizontalAlignment="Right" Width="80" Click="buttonLoad_Click"/>
 
                 </Grid>
 
                 <StackPanel Grid.Column="0" Grid.Row="1" Margin="0,0,0,10">
-                    <lvc:CartesianChart Series="{Binding SeriesCollection}" Height="500">
+                    <lvc:CartesianChart x:Name="chart" Series="{Binding SeriesCollection}" Height="500">
                         <lvc:CartesianChart.AxisY>
                             <lvc:Axis Title="Temperature" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
                         </lvc:CartesianChart.AxisY>

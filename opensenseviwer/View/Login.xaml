@@ -34,7 +34,7 @@
                     <RowDefinition Height="25" ></RowDefinition>
                 </Grid.RowDefinitions>
                 <Button x:Name="button_drag" Grid.Column="0" Grid.ColumnSpan="3" Background="{x:Null}" BorderBrush="{x:Null}" MouseLeftButtonDown="button_drag_MouseLeftButtonDown" Click="button_drag_MouseLeftButtonDown"/>
-                <Button Style="{StaticResource icon}" x:Name="button_minimize" Content="'TESTUND SO" Grid.Column="1" Click="button_minimize_Click"/>
+                <Button Style="{StaticResource icon}" x:Name="button_minimize" Content="-" Grid.Column="1" Click="button_minimize_Click"/>
                 <Button Style="{StaticResource icon}" x:Name="button_exit" Content="X" Grid.Column="2" Click="button_exit_Click"/>
             </Grid>
 
@@ -62,7 +62,7 @@
 
                 <StackPanel Grid.Column="0" Grid.Row="2">
                     <Label x:Name="label_platform_fix" Style="{StaticResource label}" Content="Platform:"/>
-                    <TextBox x:Name="textbox_platform" Style="{StaticResource textbox}"/>
+                    <TextBox x:Name="textbox_platform" Text="c9e5eb90-6c15-11e8-b35f-b0e87cb20b1d" Style="{StaticResource textbox}"/>
                 </StackPanel>
                 <Button x:Name="button_connect" Content="connect" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Center" Padding="5" Click="button_connect_Click"/>
             </Grid>

@@ -22,12 +22,14 @@ namespace View
     /// </summary>
     public partial class MainWindow : Window
     {
-        ViewModel.ViewModel vm;
+        private string[] sensors;
+        private ViewModel.ViewModel vm;
+        private char splitter = ';';
+
         public MainWindow(ViewModel.ViewModel vm)
         {
             InitializeComponent();
             this.vm = vm;
-            einlesen("a43ae11b-6c16-11e8-b35f-b0e87cb20b1d", "482a98b4-6cc2-11e8-b35f-b0e87cb20b1d");
         }
 
         public SeriesCollection SeriesCollection { get; set; }
@@ -56,24 +58,21 @@ namespace View
             Button_MenuClose.Visibility = Visibility.Collapsed;
         }
 
-        private void einlesen(string humidSensor, string tempSensor)
+        private void einlesen(string tempSensor, string humidSensor)
         {
-            ChartValues<float> temp = vm.GetData("a43ae11b-6c16-11e8-b35f-b0e87cb20b1d");
-            ChartValues<float> hum = vm.GetData("482a98b4-6cc2-11e8-b35f-b0e87cb20b1d");
-            //ChartValues<float> temp = vm.GetData("tempSensor");
-            //ChartValues<float> hum = vm.GetData("humidSensor");
             SeriesCollection = new SeriesCollection
             {
                 new LineSeries
                 {
                     Title = "temperature",
-                    Values = temp,
+                    Values = vm.GetData(tempSensor),
                     PointGeometry = null
+                    
                 },
                 new LineSeries
                 {
-                    Title = "himidity",
-                    Values = hum,
+                    Title = "humidity",
+                    Values = vm.GetData(humidSensor),
                     PointGeometry = null
                 }
             };
@@ -82,6 +81,17 @@ namespace View
             YFormatter = value => value.ToString(".00");
 
             DataContext = this;
+        }
+
+        private void buttonLoad_Click(object sender, RoutedEventArgs e)
+        {
+           einlesen();
+        }
+
+        private void einlesen()
+        {
+            sensors = vm.getSensors().Split(splitter);
+            einlesen((string)sensors.GetValue(0), (string)sensors.GetValue(1));
         }
     }
 }
