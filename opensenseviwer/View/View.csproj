@@ -151,6 +151,29 @@
       <Name>ViewModel</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icons\-01-load.png" />
+    <Resource Include="icons\-02-refresh.png" />
+    <Resource Include="icons\-03-refresh-1.png" />
+    <Resource Include="icons\-04-preferences.png" />
+    <Resource Include="icons\-05-clip.png" />
+    <Resource Include="icons\-06-marker.png" />
+    <Resource Include="icons\-07-spanner.png" />
+    <Resource Include="icons\-08-shut-down.png" />
+    <Resource Include="icons\-09-user.png" />
+    <Resource Include="icons\-10-back.png" />
+    <Resource Include="icons\-11-folder.png" />
+    <Resource Include="icons\-12-pie-chart.png" />
+    <Resource Include="icons\-13-chart.png" />
+    <Resource Include="icons\-14-golf.png" />
+    <Resource Include="icons\-15-speech-bubble.png" />
+    <Resource Include="icons\-16-pie-chart-1.png" />
+    <Resource Include="icons\000-next.png" />
+    <Resource Include="icons\001-heart.png" />
+    <Resource Include="icons\002-clock.png" />
+    <Resource Include="icons\003-trash.png" />
+    <Resource Include="icons\004-home.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

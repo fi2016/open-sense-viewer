@@ -93,5 +93,10 @@ namespace View
             sensors = vm.getSensors().Split(splitter);
             einlesen((string)sensors.GetValue(0), (string)sensors.GetValue(1));
         }
+
+        private void Button_Credits_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Sebastian Mikolai\nFrank Baumeister\nCarina Jörg");
+        }
     }
 }
