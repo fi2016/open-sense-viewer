@@ -54,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sensor.cs" />
     <Compile Include="SensorData.cs" />
+    <Compile Include="SensorsApiResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -18,12 +18,6 @@ namespace Model
         private string username;
         private string password;
 
-        private string Platform
-        {
-            get { return platform; }
-            set { platform = value; }
-        }
-
         public string Username
         {
             get
@@ -47,6 +41,19 @@ namespace Model
             set
             {
                 password = value;
+            }
+        }
+
+        public string Platform
+        {
+            get
+            {
+                return platform;
+            }
+
+            set
+            {
+                platform = value;
             }
         }
 
@@ -86,9 +93,6 @@ namespace Model
             webResponse = (HttpWebResponse)webRequest.GetResponse();
             reader = new StreamReader(webResponse.GetResponseStream());
             string responseJson = reader.ReadToEnd();
-
-            Console.WriteLine(responseJson);
-
             ProjectInfoApiResponse response = JsonConvert.DeserializeObject<ProjectInfoApiResponse>(responseJson);
             if (response.Status.Equals("success") && response.Id == 200)
             {
@@ -99,11 +103,22 @@ namespace Model
             return null;
         }
 
-        public string GetSensor()
+        public SensorsApiResponse GetAllSensors()
         {
-            string sensor1 = "a43ae11b-6c16-11e8-b35f-b0e87cb20b1d";
-            string sensor2 = "482a98b4-6cc2-11e8-b35f-b0e87cb20b1d";
-            return sensor1 + ";" + sensor2;
+            webRequest = (HttpWebRequest)WebRequest.Create("https://apps.mikolai-sebastian.de/api/v1/open_sense_viewer");
+            webRequest.ContentType = "application/json";
+            webRequest.Method = "GET";
+            webResponse = (HttpWebResponse)webRequest.GetResponse();
+            reader = new StreamReader(webResponse.GetResponseStream());
+            string responseJson = reader.ReadToEnd();
+            SensorsApiResponse response = JsonConvert.DeserializeObject<SensorsApiResponse>(responseJson);
+            if (response.Status.Equals("success") && response.Id == 200)
+            {
+                Username = username;
+                Password = password;
+                return response;
+            }
+            return null;
         }
 
         public List<SensorData<Sensor>> GetData(string sensor)
