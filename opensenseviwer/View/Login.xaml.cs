@@ -29,12 +29,12 @@ namespace View
 
         private void button_minimize_Click(object sender, RoutedEventArgs e)
         {
-            this.WindowState = WindowState.Minimized;
+            WindowState = WindowState.Minimized;
         }
 
         private void button_connect_Click(object sender, RoutedEventArgs e)
         {
-            if(vm.Login(textbox_nickname.Text, textbox_password.Password, textbox_platform.Text))
+            if (vm.Login(textbox_nickname.Text, textbox_password.Password, textbox_platform.Text))
             {
                 this.Hide();
                 MainWindow mw = new MainWindow(vm);
@@ -44,7 +44,7 @@ namespace View
 
         private void Window_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
-            this.DragMove();
+            DragMove();
         }
     }
 }

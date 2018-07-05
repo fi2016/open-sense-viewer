@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api.cs" />
-    <Compile Include="Class.cs" />
     <Compile Include="Config.cs" />
     <Compile Include="DataApiResponse.cs" />
     <Compile Include="GenericApiResponse.cs" />

@@ -46,3 +46,17 @@ H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\Newtonsoft.J
 H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
 H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.dll
 H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.pdb
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\bin\Debug\ViewModel.dll
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\bin\Debug\ViewModel.pdb
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\bin\Debug\LiveCharts.dll
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\bin\Debug\Model.dll
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\bin\Debug\Newtonsoft.Json.dll
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\bin\Debug\Model.pdb
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\bin\Debug\LiveCharts.pdb
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\bin\Debug\LiveCharts.xml
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\bin\Debug\Newtonsoft.Json.xml
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.csprojAssemblyReference.cache
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.csproj.CoreCompileInputs.cache
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.csproj.CopyComplete
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.dll
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.pdb

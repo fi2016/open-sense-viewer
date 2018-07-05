@@ -1,23 +1,24 @@
-﻿<Window x:Class="View.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:View"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+        xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="View.MainWindow"
         mc:Ignorable="d"
         Title="OpenSenseViewer" Height="671.414" Width="1055.966" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="{x:Null}" Icon="icons/logo.png" AllowsTransparency="True">
 
     <Window.Resources>
         <Storyboard x:Key="MenuOpen">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Window.Width)" Storyboard.TargetName="GridMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="50"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="200"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
 
         <Storyboard x:Key="MenuClose">
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(Window.Width)" Storyboard.TargetName="GridMenu">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="200"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="50"/>
             </DoubleAnimationUsingKeyFrames>
@@ -42,12 +43,12 @@
             <!-- Header-->
             <Grid Height="25" VerticalAlignment="Top" Background="#FF2D2D30" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
-                    <ColumnDefinition Width="25"></ColumnDefinition>
-                    <ColumnDefinition Width="25"></ColumnDefinition>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="25"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="25" ></RowDefinition>
+                    <RowDefinition Height="25" />
                 </Grid.RowDefinitions>
 
                 <Button Style="{StaticResource icon}" x:Name="button_minimize" Content="_" Grid.Column="1" Click="button_minimize_Click"/>
@@ -88,49 +89,81 @@
                 <!-- <Button x:Name="Button_Profil" Grid.Row="4" Style="{StaticResource menuoption}" Content="Profil"/>-->
 
                 <Button x:Name="Button_Credits" Grid.Row="9" Style="{StaticResource menuoption}" Content="Über" Click="Button_Credits_Click"/>
-                <Label x:Name="label_Sensor" Content="Sensor" HorizontalAlignment="Left" Margin="80,16,0,0" Grid.Row="5" VerticalAlignment="Top"/>
+                <Label x:Name="label_Sensor" Content="Sensor" HorizontalAlignment="Left" Margin="80,16,0,0" Grid.Row="5" VerticalAlignment="Top" Foreground="White"/>
+                <StackPanel HorizontalAlignment="Left" Height="326" Margin="10,10,0,0" Grid.Row="6" Grid.RowSpan="3" VerticalAlignment="Top" Width="180">
+                    <ListView Height="238" 
+              HorizontalAlignment="Left" 
+              x:Name="listViewSensors" 
+              VerticalAlignment="Top" 
+              Width="180"
+              ItemsSource="{Binding}"
+              IsSynchronizedWithCurrentItem="True"
+              SelectionChanged="listViewSensors_SelectionChanged">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn>
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType={x:Type ListViewItem}}}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" />
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </StackPanel>
+
+
             </Grid>
 
             <!--Main-->
             <Grid Margin="50,25,0,0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1*"/>
+                    <RowDefinition Height="2*"/>
                 </Grid.RowDefinitions>
 
                 <!-- Auswahl der Sensoren -->
 
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="338*"></ColumnDefinition>
-                        <ColumnDefinition Width="356*"></ColumnDefinition>
-                        <ColumnDefinition Width="307*"></ColumnDefinition>
+                        <ColumnDefinition Width="338*"/>
+                        <ColumnDefinition Width="356*"/>
+                        <ColumnDefinition Width="307*"/>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="35"></RowDefinition>
-                        <RowDefinition></RowDefinition>
-                        <RowDefinition Height="5px"></RowDefinition>
+                        <RowDefinition Height="35"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="5px"/>
                     </Grid.RowDefinitions>
 
                     <!--Vertikale Seperatoren einfügen-->
                     <Separator Grid.Row="2" Grid.ColumnSpan="4" />
                     <Calendar x:Name="cal_Von" Grid.Column="1" HorizontalAlignment="Left" Height="165" Grid.Row="1" VerticalAlignment="Top" Width="170"/>
                     <Calendar x:Name="cal_Bis" Grid.Column="1" HorizontalAlignment="Left" Height="165" Margin="185,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="170"/>
-                    <Label x:Name="label_DatenVon" Content="Daten Von" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="0,10,0,0" VerticalAlignment="Top" Width="70"/>
-                    <Label x:Name="label_DatenBis" Content="Daten Bis" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="185,10,0,0" VerticalAlignment="Top" Width="70"/>
-                    <Button x:Name="button_lesen" Content="Temperaturen ermitteln" Grid.Column="2" Style="{StaticResource icon}" HorizontalAlignment="Left" Height="50" Margin="52,57,0,0" Grid.Row="1" VerticalAlignment="Top" Width="140" BorderBrush="Black" Click="button_lesen_Click"/>
+                    <Label x:Name="label_DatenVon" Content="Daten von" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="0,10,0,0" VerticalAlignment="Top" Width="70" Foreground="White"/>
+                    <Label x:Name="label_DatenBis" Content="Daten bis" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="185,10,0,0" VerticalAlignment="Top" Width="70" Foreground="White"/>
+                    <Button x:Name="button_lesen" Content="Daten ermitteln" Grid.Column="2" Style="{StaticResource icon}" HorizontalAlignment="Left" Height="50" Margin="52,57,0,0" Grid.Row="1" VerticalAlignment="Top" Width="140" BorderBrush="Black" Click="button_lesen_Click"/>
+                    <ComboBox x:Name="comboBoxGroup" HorizontalAlignment="Left" Margin="184,70,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120">
+                        <System:String>Minuten</System:String>
+                        <System:String>Stunden</System:String>
+                        <System:String>6 Stunden</System:String>
+                        <System:String>12 Stunden</System:String>
+                        <System:String>Tage</System:String>
+                    </ComboBox>
                 </Grid>
                 <StackPanel Grid.Column="0" Grid.Row="1">
                     <lvc:CartesianChart Series="{Binding SeriesCollection}" Height="430">
                         <lvc:CartesianChart.AxisY>
-                            <lvc:Axis Title="Temperature" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
+                            <lvc:Axis Title="Temperature" LabelFormatter="{Binding YFormatter}"/>
                         </lvc:CartesianChart.AxisY>
 
                         <lvc:CartesianChart.AxisX>
-                            <lvc:Axis Title="Month" Labels="{Binding Labels}"></lvc:Axis>
+                            <lvc:Axis Title="Month" Labels="{Binding Labels}"/>
                         </lvc:CartesianChart.AxisX>
                     </lvc:CartesianChart>
                 </StackPanel>

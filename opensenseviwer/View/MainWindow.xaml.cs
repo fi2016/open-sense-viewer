@@ -1,17 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using LiveCharts;
 using LiveCharts.Wpf;
 using Model;
@@ -23,28 +13,56 @@ namespace View
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string[] sensors;
         private ViewModel.ViewModel vm;
-        private char splitter = ';';
+        private List<Sensor> listOfSensors;
 
         public MainWindow(ViewModel.ViewModel vm)
         {
             InitializeComponent();
-            this.vm = vm;
+            Vm = vm;
             GridMenu.Width = 50;
             Button_MenuOpen.Visibility = Visibility.Visible;
             Button_MenuClose.Visibility = Visibility.Collapsed;
+            listViewSensors.Visibility = Visibility.Collapsed;
+            label_Sensor.Visibility = Visibility.Collapsed;
+            ListOfSensors = new List<Sensor>();
+            List<Sensor> sensors = Vm.GetAllSensors();
+            if (sensors != null)
+            {
+                foreach (Sensor sensor in sensors)
+                {
+                    listViewSensors.Items.Add(sensor);
+                }
+            }
+            SeriesCollection = new SeriesCollection();
+            comboBoxGroup.SelectedIndex = 0;
+        }
+
+        private ViewModel.ViewModel Vm
+        {
+            get
+            {
+                return vm;
+            }
+
+            set
+            {
+                vm = value;
+            }
         }
 
         public SeriesCollection SeriesCollection { get; set; }
+
         public string[] Labels { get; set; }
+
         public Func<double, string> YFormatter { get; set; }
+
+        private List<Sensor> ListOfSensors { get => listOfSensors; set => listOfSensors = value; }
 
         private void button_exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
         }
-
 
         private void Grid_MouseLeftButtonDown(object sender, RoutedEventArgs e)
         {
@@ -53,49 +71,28 @@ namespace View
 
         private void button_minimize_Click(object sender, RoutedEventArgs e)
         {
-            this.WindowState = WindowState.Minimized;
+            WindowState = WindowState.Minimized;
         }
 
         private void Button_MenuOpen_Click(object sender, RoutedEventArgs e)
         {
             Button_MenuOpen.Visibility = Visibility.Collapsed;
             Button_MenuClose.Visibility = Visibility.Visible;
+            listViewSensors.Visibility = Visibility.Visible;
+            label_Sensor.Visibility = Visibility.Visible;
         }
 
         private void Button_MenuClose_Click(object sender, RoutedEventArgs e)
         {
             Button_MenuOpen.Visibility = Visibility.Visible;
             Button_MenuClose.Visibility = Visibility.Collapsed;
-        }
-
-        private void einlesen(string tempSensor, string humidSensor)
-        {
-            SeriesCollection = new SeriesCollection
-            {
-                new LineSeries
-                {
-                    Title = "temperature",
-                    Values = vm.GetData(tempSensor),
-                    PointGeometry = null
-                    
-                },
-                new LineSeries
-                {
-                    Title = "humidity",
-                    Values = vm.GetData(humidSensor),
-                    PointGeometry = null
-                }
-            };
-
-            Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May" };
-            YFormatter = value => value.ToString(".00");
-
-            DataContext = this;
+            listViewSensors.Visibility = Visibility.Collapsed;
+            label_Sensor.Visibility = Visibility.Collapsed;
         }
 
         private void Button_Credits_Click(object sender, RoutedEventArgs e)
         {
-            ProjectInfoApiResponse projectInfo = vm.GetProjectInfo();
+            ProjectInfoApiResponse projectInfo = Vm.GetProjectInfo();
             if (projectInfo != null)
             {
                 string authors = "";
@@ -103,7 +100,7 @@ namespace View
                 {
                     authors += author + "\n";
                 }
-                MessageBox.Show("Projekt:\n" + projectInfo.Title + "\n\nBeschreibung:\n" + projectInfo.Description + "\n\nAutoren:\n" + authors + "\n\nWebsite:\n" + 
+                MessageBox.Show("Projekt:\n" + projectInfo.Title + "\n\nBeschreibung:\n" + projectInfo.Description + "\n\nAutoren:\n" + authors + "\nWebsite:\n" + 
                     projectInfo.Website + "\n\nVersion:\n" + projectInfo.Version, "Open Sense Viewer", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
@@ -114,8 +111,45 @@ namespace View
 
         private void button_lesen_Click(object sender, RoutedEventArgs e)
         {
-            sensors = vm.getSensors().Split(splitter);
-            einlesen((string)sensors.GetValue(0), (string)sensors.GetValue(1));
+            SeriesCollection.Clear();
+            foreach (Sensor sensor in ListOfSensors)
+            {
+                AddGraphLine(sensor);
+            }
+        }
+
+        private void listViewSensors_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            foreach (Sensor item in e.RemovedItems)
+            {
+                ListOfSensors.Remove(item);
+            }
+            foreach (Sensor item in e.AddedItems)
+            {
+                ListOfSensors.Add(item);
+            }
+            SeriesCollection.Clear();
+        }
+
+        private void AddGraphLine(Sensor sensor)
+        {
+            SeriesCollection.Add(new LineSeries
+            {
+                Title = sensor.Name,
+                Values = Vm.GetData(sensor.Uuid, (string)comboBoxGroup.SelectedItem),
+                PointGeometry = null
+            });
+
+            //Labels = new[] {
+            //    "",
+            //    "Feb",
+            //    "Mar",
+             //   "Apr",
+              //  "May"
+            //};
+
+            YFormatter = value => value.ToString(".00");
+            DataContext = this;
         }
     }
 }

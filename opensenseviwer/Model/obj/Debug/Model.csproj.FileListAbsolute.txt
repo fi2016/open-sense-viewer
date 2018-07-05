@@ -26,3 +26,11 @@ H:\Schule\CSHARP\opensenseviewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.
 H:\Schule\CSHARP\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 H:\Schule\CSHARP\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.dll
 H:\Schule\CSHARP\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.pdb
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\Model\bin\Debug\Model.dll
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\Model\bin\Debug\Model.pdb
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.dll
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.xml
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\Model\obj\Debug\Model.dll
+D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\Model\obj\Debug\Model.pdb

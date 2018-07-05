@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using LiveCharts;
+using System.Linq;
 
 namespace ViewModel
 {
@@ -47,32 +48,55 @@ namespace ViewModel
             writer.Close();
         }
 
-       public ChartValues<float> GetData(string sensor)
-       {
-            ChartValues<float> values = new ChartValues<float>();
-            try
+        public ChartValues<float> GetData(string sensor, string groupBy)
+        {
+            Console.WriteLine(groupBy);
+            ChartValues<float> chartValues = new ChartValues<float>();
+            List<SensorData<Sensor>> sensorData = api.GetData(sensor);
+            if (sensorData != null)
             {
-                List<SensorData<Sensor>> temp = api.GetData(sensor);
-                for (int i = 0; i < 1500; i++)
+                List<SensorData<Sensor>> groupedSensorData = sensorData.GroupBy(data =>
                 {
-                    float f = temp[i].Value;
-                    if (f > 4)
+                    DateTime dateTime = data.Time;
+                    if (groupBy.Equals("Stunden"))
                     {
-                        values.Add(f);
+                        dateTime = dateTime.AddMinutes(-(dateTime.Minute % 60));
+                        dateTime = dateTime.AddHours(-(dateTime.Hour % 1));
                     }
+                    else if (groupBy.Equals("6 Stunden"))
+                    {
+                        dateTime = dateTime.AddMinutes(-(dateTime.Minute % 60));
+                        dateTime = dateTime.AddHours(-(dateTime.Hour % 6));
+                    }
+                    else if (groupBy.Equals("12 Stunden"))
+                    {
+                        dateTime = dateTime.AddMinutes(-(dateTime.Minute % 60));
+                        dateTime = dateTime.AddHours(-(dateTime.Hour % 12));
+                    }
+                    else if (groupBy.Equals("Tage"))
+                    {
+                        dateTime = dateTime.AddMinutes(-(dateTime.Minute % 60));
+                        dateTime = dateTime.AddHours(-(dateTime.Hour % 24));
+                    }
+                    else
+                    {
+                        dateTime = dateTime.AddMinutes(-(dateTime.Minute % 5));
+                    }
+                    dateTime = dateTime.AddMilliseconds(-dateTime.Millisecond - 1000 * dateTime.Second);
+                    return dateTime;
+                }).Select(groupedData => new SensorData<Sensor>(groupedData.Key, groupedData.Average(groupedAverageData => groupedAverageData.Value))).ToList();
+                foreach (SensorData<Sensor> data in groupedSensorData)
+                {
+                    chartValues.Add(data.Value);
                 }
             }
-            catch(NullReferenceException)
-            {
-                MessageBox.Show("Es konnten keine Daten aus dem Sensor ausgelesen werden!", "Open Sense Viewer", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            return values;
-       }
+            return chartValues;
+        }
 
-       public string getSensors()
-       {
-            return api.GetSensor();
-       }
+        public List<Sensor> GetAllSensors()
+        {
+            return api.GetAllSensors();
+        }
 
         public ProjectInfoApiResponse GetProjectInfo()
         {
