@@ -89,20 +89,15 @@ namespace View
             DataContext = this;
         }
 
-        private void buttonLoad_Click(object sender, RoutedEventArgs e)
-        {
-           einlesen();
-        }
-
-        private void einlesen()
-        {
-            sensors = vm.getSensors().Split(splitter);
-            einlesen((string)sensors.GetValue(0), (string)sensors.GetValue(1));
-        }
-
         private void Button_Credits_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Sebastian Mikolai\nFrank Baumeister\nCarina Jörg");
+        }
+
+        private void btn_lesen_Click(object sender, RoutedEventArgs e)
+        {
+            sensors = vm.getSensors().Split(splitter);
+            einlesen((string)sensors.GetValue(0), (string)sensors.GetValue(1));
         }
     }
 }
