@@ -19,13 +19,12 @@ namespace ViewModel
             api = new Model.Api(platform);
             if (api.CheckAuth(username, password))
             {
-                //SavePlatform(platform);
+                SavePlatform(platform);
                 return true;
             }
             else
             {
                 MessageBox.Show("Anmeldung fehlgeschlagen!");
-                //SavePlatform(platform);
                 return false;
             }
         }
@@ -42,7 +41,7 @@ namespace ViewModel
             try
             {
                 List<SensorData<Sensor>> temp = api.GetData(sensor);
-                for (int i = 0; i < 2000; i++)
+                for (int i = 0; i < 1500; i++)
                 {
                     float f = temp[i].Value;
                     if (f > 4)
@@ -57,5 +56,10 @@ namespace ViewModel
             }
             return values;
        }
+
+       public string getSensors()
+        {
+            return api.GetSensor();
+        }
     }
 }

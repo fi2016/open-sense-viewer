@@ -78,18 +78,18 @@ namespace Model
             return false;
         }
 
-        public Sensor GetSensor(string sensor)
+        public string GetSensor()
         {
-            return null;
+            List<String> sensors = new List<string>();
+            string sensor1 = "a43ae11b-6c16-11e8-b35f-b0e87cb20b1d";
+            string sensor2 = "482a98b4-6cc2-11e8-b35f-b0e87cb20b1d";
+            return sensor1 + ";" + sensor2;
         }
 
         public List<SensorData<Sensor>> GetData(string sensor)
         {
-            //Sensor s = GetSensor(sensor);
             try
             {
-                //if (s != null)
-                //{
                     webRequest = (HttpWebRequest)WebRequest.Create("https://apps.mikolai-sebastian.de/api/v1/open_sense_viewer/data/get");
                     webRequest.ContentType = "application/json";
                     webRequest.Method = "POST";
@@ -113,9 +113,8 @@ namespace Model
                     {
                         MessageBox.Show("Fehler beim Anmelden");
                     }
-                //}
             }
-            catch(Exception)
+            catch(NullReferenceException)
             {
                 MessageBox.Show("Es konnte keine verbindung mit dem Sensor aufgebaut werden");
             }
