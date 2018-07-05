@@ -119,7 +119,7 @@
                     <!--Vertikale Seperatoren einfügen-->
 
                     <Label x:Name="label_Sensor" Grid.Row="0" Grid.Column="1" Content="Sensors" VerticalAlignment="Stretch" HorizontalAlignment="Center" Width="5"/>
-                    <Separator Grid.Row="1" Grid.ColumnSpan="6" Margin="0,65,0,-115" />
+                    <Separator Grid.Row="1" Grid.ColumnSpan="6" Margin="0,65,0,-115"/>
                     <Button x:Name="btn_lesen" Style="{StaticResource menubutton}" Content="Daten einlesen" Grid.Column="5" HorizontalAlignment="Left" Height="50" Margin="120,65,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100" Click="btn_lesen_Click" BorderBrush="Black"/>
                     <Calendar HorizontalAlignment="Left" Height="158" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="3" Grid.Row="1" Margin="311,10,0,0"/>
                     <Calendar Grid.Column="2" HorizontalAlignment="Left" Height="158" Margin="172,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="4"/>
