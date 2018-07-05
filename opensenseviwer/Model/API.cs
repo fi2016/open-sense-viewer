@@ -101,7 +101,6 @@ namespace Model
 
         public string GetSensor()
         {
-            List<String> sensors = new List<string>();
             string sensor1 = "a43ae11b-6c16-11e8-b35f-b0e87cb20b1d";
             string sensor2 = "482a98b4-6cc2-11e8-b35f-b0e87cb20b1d";
             return sensor1 + ";" + sensor2;

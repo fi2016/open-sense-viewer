@@ -10,9 +10,9 @@ namespace Model
 {
     public class Class
     {
-        HttpWebRequest httpWebRequest;
-        StreamWriter sw;
-        StreamReader sr;
+        private HttpWebRequest httpWebRequest;
+        private StreamWriter sw;
+        private StreamReader sr;
         
 
         public void getData(String sensor)
