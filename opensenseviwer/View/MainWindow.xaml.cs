@@ -93,17 +93,6 @@ namespace View
             DataContext = this;
         }
 
-        private void buttonLoad_Click(object sender, RoutedEventArgs e)
-        {
-           einlesen();
-        }
-
-        private void einlesen()
-        {
-            sensors = vm.getSensors().Split(splitter);
-            einlesen((string)sensors.GetValue(0), (string)sensors.GetValue(1));
-        }
-
         private void Button_Credits_Click(object sender, RoutedEventArgs e)
         {
             ProjectInfoApiResponse projectInfo = vm.GetProjectInfo();
@@ -121,6 +110,12 @@ namespace View
             {
                 MessageBox.Show("Fehler beim Auslesen der Information!", "Open Sense Viewer", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void button_lesen_Click(object sender, RoutedEventArgs e)
+        {
+            sensors = vm.getSensors().Split(splitter);
+            einlesen((string)sensors.GetValue(0), (string)sensors.GetValue(1));
         }
     }
 }
