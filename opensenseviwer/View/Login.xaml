@@ -6,7 +6,7 @@
         xmlns:vm="clr-namespace:ViewModel;assembly=ViewModel"
         xmlns:local="clr-namespace:View"
         mc:Ignorable="d"
-        Title="Login" Height="300" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowDrop="True" Icon="icons/logo.png" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}">
+        Title="Login" Height="300" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowDrop="True" Icon="icons/logo.png" Background="{x:Null}" Foreground="{x:Null}" BorderBrush="{x:Null}" AllowsTransparency="True">
 
     <Border CornerRadius="15" BorderBrush="Transparent">
         <Border.Background>
@@ -50,20 +50,20 @@
                 </Grid.RowDefinitions>
 
                 <StackPanel Grid.Column="0" Grid.Row="0">
-                    <Label x:Name="label_nickname_fix" Style="{StaticResource label}" Content="Nickname:"/>
+                    <Label x:Name="label_nickname_fix" Style="{StaticResource label}" Content="Benutzername"/>
                     <TextBox x:Name="textbox_nickname" Style="{StaticResource textbox}"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="0" Grid.Row="1">
-                    <Label x:Name="label_password_fix" Style="{StaticResource label}" Content="Password:"/>
+                    <Label x:Name="label_password_fix" Style="{StaticResource label}" Content="Passwort"/>
                     <PasswordBox x:Name="textbox_password"/>
                 </StackPanel>
 
                 <StackPanel Grid.Column="0" Grid.Row="2">
-                    <Label x:Name="label_platform_fix" Style="{StaticResource label}" Content="Platform:"/>
-                    <TextBox x:Name="textbox_platform" Text="c9e5eb90-6c15-11e8-b35f-b0e87cb20b1d" Style="{StaticResource textbox}"/>
+                    <Label x:Name="label_platform_fix" Style="{StaticResource label}" Content="Plattform"/>
+                    <TextBox x:Name="textbox_platform" Style="{StaticResource textbox}"/>
                 </StackPanel>
-                <Button x:Name="button_connect" Content="connect" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Center" Padding="5" Click="button_connect_Click"/>
+                <Button x:Name="button_connect" Content="Anmelden" Grid.Column="0" Grid.Row="3" VerticalAlignment="Center" Margin="0" HorizontalAlignment="Center" Padding="5" Click="button_connect_Click"/>
             </Grid>
         </Grid>
     </Border>

@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using LiveCharts;
 using LiveCharts.Wpf;
+using Model;
 
 namespace View
 {
@@ -30,6 +31,9 @@ namespace View
         {
             InitializeComponent();
             this.vm = vm;
+            GridMenu.Width = 50;
+            Button_MenuOpen.Visibility = Visibility.Visible;
+            Button_MenuClose.Visibility = Visibility.Collapsed;
         }
 
         public SeriesCollection SeriesCollection { get; set; }
@@ -102,7 +106,21 @@ namespace View
 
         private void Button_Credits_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Sebastian Mikolai\nFrank Baumeister\nCarina Jörg");
+            ProjectInfoApiResponse projectInfo = vm.GetProjectInfo();
+            if (projectInfo != null)
+            {
+                string authors = "";
+                foreach (string author in projectInfo.Authors)
+                {
+                    authors += author + "\n";
+                }
+                MessageBox.Show("Projekt:\n" + projectInfo.Title + "\n\nBeschreibung:\n" + projectInfo.Description + "\n\nAutoren:\n" + authors + "\n\nWebsite:\n" + 
+                    projectInfo.Website + "\n\nVersion:\n" + projectInfo.Version, "Open Sense Viewer", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+            {
+                MessageBox.Show("Fehler beim Auslesen der Information!", "Open Sense Viewer", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

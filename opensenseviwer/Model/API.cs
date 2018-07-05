@@ -78,6 +78,27 @@ namespace Model
             return false;
         }
 
+        public ProjectInfoApiResponse GetProjectInfo()
+        {
+            webRequest = (HttpWebRequest)WebRequest.Create("https://apps.mikolai-sebastian.de/api/v1/open_sense_viewer");
+            webRequest.ContentType = "application/json";
+            webRequest.Method = "GET";
+            webResponse = (HttpWebResponse)webRequest.GetResponse();
+            reader = new StreamReader(webResponse.GetResponseStream());
+            string responseJson = reader.ReadToEnd();
+
+            Console.WriteLine(responseJson);
+
+            ProjectInfoApiResponse response = JsonConvert.DeserializeObject<ProjectInfoApiResponse>(responseJson);
+            if (response.Status.Equals("success") && response.Id == 200)
+            {
+                Username = username;
+                Password = password;
+                return response;
+            }
+            return null;
+        }
+
         public string GetSensor()
         {
             List<String> sensors = new List<string>();

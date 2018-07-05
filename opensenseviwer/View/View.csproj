@@ -146,6 +146,10 @@
     <Resource Include="icons\open-sense-viewer-logo.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Model\Model.csproj">
+      <Project>{f12eee2c-393e-4dc1-8f73-6a78f2680c53}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ViewModel\ViewModel.csproj">
       <Project>{b5bf89ff-d16c-4fb5-8ee6-4a985edf4408}</Project>
       <Name>ViewModel</Name>

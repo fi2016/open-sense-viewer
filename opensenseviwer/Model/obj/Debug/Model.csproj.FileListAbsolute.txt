@@ -12,3 +12,10 @@ H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.xml
 H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.dll
 H:\Aktuell\C#\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.pdb
+C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\Model\bin\Debug\Model.dll
+C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\Model\bin\Debug\Model.pdb
+C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\Model\obj\Debug\Model.dll
+C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\Model\obj\Debug\Model.pdb
