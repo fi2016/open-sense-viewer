@@ -34,3 +34,15 @@ C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\ViewMode
 C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
 C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.dll
 C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.pdb
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\ViewModel.dll
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\ViewModel.pdb
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\LiveCharts.dll
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\Model.dll
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\Newtonsoft.Json.dll
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\Model.pdb
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\LiveCharts.pdb
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\LiveCharts.xml
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\bin\Debug\Newtonsoft.Json.xml
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.dll
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.pdb

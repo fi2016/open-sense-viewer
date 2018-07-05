@@ -19,3 +19,10 @@ C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\Model\bi
 C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
 C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\Model\obj\Debug\Model.dll
 C:\Users\MikolaiSebastian\Source\Repos\open-sense-viewer\opensenseviwer\Model\obj\Debug\Model.pdb
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\Model\bin\Debug\Model.dll
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\Model\bin\Debug\Model.pdb
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.dll
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\Model\bin\Debug\Newtonsoft.Json.xml
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.csprojResolveAssemblyReference.cache
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.dll
+H:\Schule\CSHARP\opensenseviewer\opensenseviwer\Model\obj\Debug\Model.pdb

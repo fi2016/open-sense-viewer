@@ -62,7 +62,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="25"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
                     <RowDefinition Height="50"/>
@@ -74,20 +74,21 @@
                     <RowDefinition Height="50"/>
                 </Grid.RowDefinitions>
 
-                
+
                 <Button x:Name="Button_MenuOpen" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Click="Button_MenuOpen_Click">
                     <Image x:Name="icon_menuOpen" Source="icons/-04-preferences.png"/>
                 </Button>
                 <Button x:Name="Button_MenuClose" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Click="Button_MenuClose_Click">
                     <Image x:Name="icon_menuClose" Source="icons/-04-preferences.png"/>
                 </Button>
-                
 
-                    <Button x:Name="Button_Dashboard" Grid.Row="2" Style="{StaticResource menuoption}" Content="Home"/>
+
+                <Button x:Name="Button_Dashboard" Grid.Row="2" Style="{StaticResource menuoption}" Content="Home"/>
                 <Button x:Name="Button_Charts" Grid.Row="3" Style="{StaticResource menuoption}" Content="Graph"/>
                 <!-- <Button x:Name="Button_Profil" Grid.Row="4" Style="{StaticResource menuoption}" Content="Profil"/>-->
 
                 <Button x:Name="Button_Credits" Grid.Row="9" Style="{StaticResource menuoption}" Content="Über" Click="Button_Credits_Click"/>
+                <Label x:Name="label_Sensor" Content="Sensor" HorizontalAlignment="Left" Margin="80,16,0,0" Grid.Row="5" VerticalAlignment="Top"/>
             </Grid>
 
             <!--Main-->
@@ -97,18 +98,16 @@
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*"></RowDefinition>
-                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <!-- Auswahl der Sensoren -->
 
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition Width="5px"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
-                        <ColumnDefinition Width="5px"></ColumnDefinition>
-                        <ColumnDefinition></ColumnDefinition>
+                        <ColumnDefinition Width="338*"></ColumnDefinition>
+                        <ColumnDefinition Width="356*"></ColumnDefinition>
+                        <ColumnDefinition Width="307*"></ColumnDefinition>
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="35"></RowDefinition>
@@ -117,16 +116,15 @@
                     </Grid.RowDefinitions>
 
                     <!--Vertikale Seperatoren einfügen-->
-
-                    <Label x:Name="label_Sensor" Grid.Row="0" Grid.Column="1" Content="Sensors" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
-
-
-                    <Separator Grid.Row="2" Grid.ColumnSpan="5" />
-
+                    <Separator Grid.Row="2" Grid.ColumnSpan="4" />
+                    <Calendar x:Name="cal_Von" Grid.Column="1" HorizontalAlignment="Left" Height="165" Grid.Row="1" VerticalAlignment="Top" Width="170"/>
+                    <Calendar x:Name="cal_Bis" Grid.Column="1" HorizontalAlignment="Left" Height="165" Margin="185,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="170"/>
+                    <Label x:Name="label_DatenVon" Content="Daten Von" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="0,10,0,0" VerticalAlignment="Top" Width="70"/>
+                    <Label x:Name="label_DatenBis" Content="Daten Bis" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="185,10,0,0" VerticalAlignment="Top" Width="70"/>
+                    <Button x:Name="button_lesen" Content="Temperaturen ermitteln" Grid.Column="2" Style="{StaticResource icon}" HorizontalAlignment="Left" Height="50" Margin="52,57,0,0" Grid.Row="1" VerticalAlignment="Top" Width="140" BorderBrush="Black" Click="button_lesen_Click"/>
                 </Grid>
-
                 <StackPanel Grid.Column="0" Grid.Row="1">
-                    <lvc:CartesianChart Series="{Binding SeriesCollection}" Height="500">
+                    <lvc:CartesianChart Series="{Binding SeriesCollection}" Height="430">
                         <lvc:CartesianChart.AxisY>
                             <lvc:Axis Title="Temperature" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
                         </lvc:CartesianChart.AxisY>
@@ -136,7 +134,7 @@
                         </lvc:CartesianChart.AxisX>
                     </lvc:CartesianChart>
                 </StackPanel>
-                
+
             </Grid>
         </Grid>
 
