@@ -36,9 +36,15 @@ namespace View
         public string[] Labels { get; set; }
         public Func<double, string> YFormatter { get; set; }
 
-    private void button_exit_Click(object sender, RoutedEventArgs e)
+        private void button_exit_Click(object sender, RoutedEventArgs e)
         {
             Application.Current.Shutdown();
+        }
+
+
+        private void Grid_MouseLeftButtonDown(object sender, RoutedEventArgs e)
+        {
+            DragMove();
         }
 
         private void button_minimize_Click(object sender, RoutedEventArgs e)
