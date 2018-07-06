@@ -37,61 +37,60 @@
 
     </Window.Triggers>
 
-    <Border CornerRadius="10" BorderBrush="Transparent" Background="#FF424242">
 
-        <Grid>
-            <!-- Header-->
-            <Grid Height="25" VerticalAlignment="Top" Background="#FF2D2D30" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="25"/>
-                    <ColumnDefinition Width="25"/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25" />
-                </Grid.RowDefinitions>
+    <Grid Background="#FF424242">
+        <!-- Header-->
+        <Grid Height="25" VerticalAlignment="Top" Background="#FF2D2D30" MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="25"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25" />
+            </Grid.RowDefinitions>
 
-                <Button Style="{StaticResource icon}" x:Name="button_minimize" Content="_" Grid.Column="1" Click="button_minimize_Click"/>
-                <Button Style="{StaticResource icon}" x:Name="button_exit" Content="X" Grid.Column="2" Click="button_exit_Click"/>
+            <Button Style="{StaticResource icon}" x:Name="button_minimize" Content="_" Grid.Column="1" Click="button_minimize_Click"/>
+            <Button Style="{StaticResource icon}" x:Name="button_exit" Content="X" Grid.Column="2" Click="button_exit_Click"/>
 
-            </Grid>
+        </Grid>
 
-            <!--Menu-->
+        <!--Menu-->
 
-            <Grid x:Name="GridMenu" Width="200" HorizontalAlignment="Left" Background="#FF2D2D30" Panel.ZIndex="5">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="25"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition Height="50"/>
-                    <RowDefinition/>
-                    <RowDefinition Height="50"/>
-                </Grid.RowDefinitions>
-
-
-                <Button x:Name="Button_MenuOpen" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Click="Button_MenuOpen_Click">
-                    <Image x:Name="icon_menuOpen" Source="icons/-04-preferences.png"/>
-                </Button>
-                <Button x:Name="Button_MenuClose" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Click="Button_MenuClose_Click">
-                    <Image x:Name="icon_menuClose" Source="icons/-04-preferences.png"/>
-                </Button>
+        <Grid x:Name="GridMenu" Width="200" HorizontalAlignment="Left" Background="#FF2D2D30" Panel.ZIndex="5">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
 
 
-                <Button x:Name="Button_Dashboard" Grid.Row="2" Style="{StaticResource menuoption}" Content="Home"/>
-                <Button x:Name="Button_Charts" Grid.Row="3" Style="{StaticResource menuoption}" Content="Graph"/>
-                <!-- <Button x:Name="Button_Profil" Grid.Row="4" Style="{StaticResource menuoption}" Content="Profil"/>-->
+            <Button x:Name="Button_MenuOpen" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Click="Button_MenuOpen_Click">
+                <Image x:Name="icon_menuOpen" Source="icons/-04-preferences.png"/>
+            </Button>
+            <Button x:Name="Button_MenuClose" Grid.Row="0" Style="{StaticResource menubutton}" HorizontalAlignment="Right" Click="Button_MenuClose_Click">
+                <Image x:Name="icon_menuClose" Source="icons/-04-preferences.png"/>
+            </Button>
 
-                <Button x:Name="Button_Credits" Grid.Row="9" Style="{StaticResource menuoption}" Content="Über" Click="Button_Credits_Click"/>
-                <Label x:Name="label_Sensor" Content="Sensor" HorizontalAlignment="Left" Margin="80,16,0,0" Grid.Row="5" VerticalAlignment="Top" Foreground="White"/>
-                <StackPanel HorizontalAlignment="Left" Height="326" Margin="10,10,0,0" Grid.Row="6" Grid.RowSpan="3" VerticalAlignment="Top" Width="180">
-                    <ListView Height="238" 
+
+            <Button x:Name="Button_Dashboard" Grid.Row="2" Style="{StaticResource menuoption}" Content="Home"/>
+            <Button x:Name="Button_Charts" Grid.Row="3" Style="{StaticResource menuoption}" Content="Graph"/>
+            <!-- <Button x:Name="Button_Profil" Grid.Row="4" Style="{StaticResource menuoption}" Content="Profil"/>-->
+
+            <Button x:Name="Button_Credits" Grid.Row="9" Style="{StaticResource menuoption}" Content="Über" Click="Button_Credits_Click"/>
+            <Label x:Name="label_Sensor" Content="Sensor" HorizontalAlignment="Left" Margin="80,16,0,0" Grid.Row="5" VerticalAlignment="Top" Foreground="White"/>
+            <StackPanel HorizontalAlignment="Left" Height="326" Margin="10,10,0,0" Grid.Row="6" Grid.RowSpan="3" VerticalAlignment="Top" Width="180">
+                <ListView Height="238" 
               HorizontalAlignment="Left" 
               x:Name="listViewSensors" 
               VerticalAlignment="Top" 
@@ -99,77 +98,75 @@
               ItemsSource="{Binding}"
               IsSynchronizedWithCurrentItem="True"
               SelectionChanged="listViewSensors_SelectionChanged">
-                        <ListView.View>
-                            <GridView>
-                                <GridViewColumn>
-                                    <GridViewColumn.CellTemplate>
-                                        <DataTemplate>
-                                            <CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType={x:Type ListViewItem}}}" />
-                                        </DataTemplate>
-                                    </GridViewColumn.CellTemplate>
-                                </GridViewColumn>
-                                <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" />
-                            </GridView>
-                        </ListView.View>
-                    </ListView>
-                </StackPanel>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn>
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <CheckBox IsChecked="{Binding IsSelected, RelativeSource={RelativeSource AncestorType={x:Type ListViewItem}}}" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+                            <GridViewColumn DisplayMemberBinding="{Binding Name}" Header="Name" />
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </StackPanel>
 
 
-            </Grid>
-
-            <!--Main-->
-            <Grid Margin="50,25,0,0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="1*"/>
-                    <RowDefinition Height="2*"/>
-                </Grid.RowDefinitions>
-
-                <!-- Auswahl der Sensoren -->
-
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="338*"/>
-                        <ColumnDefinition Width="356*"/>
-                        <ColumnDefinition Width="307*"/>
-                    </Grid.ColumnDefinitions>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="35"/>
-                        <RowDefinition/>
-                        <RowDefinition Height="5px"/>
-                    </Grid.RowDefinitions>
-
-                    <!--Vertikale Seperatoren einfügen-->
-                    <Separator Grid.Row="2" Grid.ColumnSpan="4" />
-                    <Calendar x:Name="cal_Von" Grid.Column="1" HorizontalAlignment="Left" Height="165" Grid.Row="1" VerticalAlignment="Top" Width="170"/>
-                    <Calendar x:Name="cal_Bis" Grid.Column="1" HorizontalAlignment="Left" Height="165" Margin="185,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="170"/>
-                    <Label x:Name="label_DatenVon" Content="Daten von" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="0,10,0,0" VerticalAlignment="Top" Width="70" Foreground="White"/>
-                    <Label x:Name="label_DatenBis" Content="Daten bis" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="185,10,0,0" VerticalAlignment="Top" Width="70" Foreground="White"/>
-                    <Button x:Name="button_lesen" Content="Daten ermitteln" Grid.Column="2" Style="{StaticResource icon}" HorizontalAlignment="Left" Height="50" Margin="52,57,0,0" Grid.Row="1" VerticalAlignment="Top" Width="140" BorderBrush="Black" Click="button_lesen_Click"/>
-                    <ComboBox x:Name="comboBoxGroup" HorizontalAlignment="Left" Margin="184,70,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120">
-                        <System:String>Minuten</System:String>
-                        <System:String>Stunden</System:String>
-                        <System:String>6 Stunden</System:String>
-                        <System:String>12 Stunden</System:String>
-                        <System:String>Tage</System:String>
-                    </ComboBox>
-                </Grid>
-                <StackPanel Grid.Column="0" Grid.Row="1">
-                    <lvc:CartesianChart Series="{Binding SeriesCollection}" Height="430">
-                        <lvc:CartesianChart.AxisY>
-                            <lvc:Axis Title="Temperature" LabelFormatter="{Binding YFormatter}"/>
-                        </lvc:CartesianChart.AxisY>
-
-                        <lvc:CartesianChart.AxisX>
-                            <lvc:Axis Title="Month" Labels="{Binding Labels}"/>
-                        </lvc:CartesianChart.AxisX>
-                    </lvc:CartesianChart>
-                </StackPanel>
-
-            </Grid>
         </Grid>
 
-    </Border>
+        <!--Main-->
+        <Grid Margin="50,25,0,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Auswahl der Sensoren -->
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="338*"/>
+                    <ColumnDefinition Width="356*"/>
+                    <ColumnDefinition Width="307*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="35"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="5px"/>
+                </Grid.RowDefinitions>
+
+                <!--Vertikale Seperatoren einfügen-->
+                <Separator Grid.Row="2" Grid.ColumnSpan="4" />
+                <Calendar x:Name="cal_Von" Grid.Column="1" HorizontalAlignment="Left" Height="165" Grid.Row="1" VerticalAlignment="Top" Width="170"/>
+                <Calendar x:Name="cal_Bis" Grid.Column="1" HorizontalAlignment="Left" Height="165" Margin="185,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="170"/>
+                <Label x:Name="label_DatenVon" Content="Daten von" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="0,10,0,0" VerticalAlignment="Top" Width="70" Foreground="White"/>
+                <Label x:Name="label_DatenBis" Content="Daten bis" Grid.Column="1" HorizontalAlignment="Left" Height="25" Margin="185,10,0,0" VerticalAlignment="Top" Width="70" Foreground="White"/>
+                <Button x:Name="button_lesen" Content="Daten ermitteln" Grid.Column="2" Style="{StaticResource icon}" HorizontalAlignment="Left" Height="50" Margin="52,57,0,0" Grid.Row="1" VerticalAlignment="Top" Width="140" BorderBrush="Black" Click="button_lesen_Click"/>
+                <ComboBox x:Name="comboBoxGroup" HorizontalAlignment="Left" Margin="184,70,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120">
+                    <System:String>Minuten</System:String>
+                    <System:String>Stunden</System:String>
+                    <System:String>6 Stunden</System:String>
+                    <System:String>12 Stunden</System:String>
+                    <System:String>Tage</System:String>
+                </ComboBox>
+            </Grid>
+            <StackPanel Grid.Column="0" Grid.Row="1">
+                <lvc:CartesianChart Series="{Binding SeriesCollection}" Height="430">
+                    <lvc:CartesianChart.AxisY>
+                        <lvc:Axis Title="Temperature" LabelFormatter="{Binding YFormatter}"/>
+                    </lvc:CartesianChart.AxisY>
+
+                    <lvc:CartesianChart.AxisX>
+                        <lvc:Axis Title="Month" Labels="{Binding Labels}"/>
+                    </lvc:CartesianChart.AxisX>
+                </lvc:CartesianChart>
+            </StackPanel>
+
+        </Grid>
+    </Grid>
 </Window>

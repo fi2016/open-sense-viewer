@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\View\obj\Debug\
+E:\OpenSenseViewer\opensenseviwer\View\obj\Debug\
 View
 none
 false
 DEBUG;TRACE
-D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\View\App.xaml
+E:\OpenSenseViewer\opensenseviwer\View\App.xaml
 2-419086188
 
 6-1227449588
-17-1075926880
+17-1453596286
 Login.xaml;MainWindow.xaml;
 
-False
+True
 

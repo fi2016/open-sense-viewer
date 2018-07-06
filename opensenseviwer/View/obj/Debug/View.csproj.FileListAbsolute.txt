@@ -150,3 +150,12 @@ D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\View\obj\Debug\View.cs
 D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\View\obj\Debug\View.csproj.CopyComplete
 D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\View\obj\Debug\View.exe
 D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\View\obj\Debug\View.pdb
+E:\OpenSenseViewer\opensenseviwer\View\bin\Debug\View.exe.config
+E:\OpenSenseViewer\opensenseviwer\View\obj\Debug\View.exe
+E:\OpenSenseViewer\opensenseviwer\View\obj\Debug\View.pdb
+E:\OpenSenseViewer\opensenseviwer\View\obj\Debug\View.csprojResolveAssemblyReference.cache
+E:\OpenSenseViewer\opensenseviwer\View\obj\Debug\Login.g.cs
+E:\OpenSenseViewer\opensenseviwer\View\obj\Debug\MainWindow.g.cs
+E:\OpenSenseViewer\opensenseviwer\View\obj\Debug\App.g.cs
+E:\OpenSenseViewer\opensenseviwer\View\obj\Debug\View_MarkupCompile.cache
+E:\OpenSenseViewer\opensenseviwer\View\obj\Debug\View_MarkupCompile.lref

@@ -4,9 +4,7 @@
              xmlns:local="clr-namespace:View"
              StartupUri="Login.xaml">
     <Application.Resources>
-        
-        <Color x:Key="background_DarkGrey">#FF2E2E2E</Color>
-        
+
         <!--Login-->
         <Style x:Key="main" TargetType="TextBox">
             <Setter Property="Foreground" Value="White"/>

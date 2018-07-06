@@ -60,3 +60,15 @@ D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\obj\Debug\Vi
 D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.csproj.CopyComplete
 D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.dll
 D:\Projekte\VisualStudio\open-sense-viewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.pdb
+E:\OpenSenseViewer\opensenseviwer\ViewModel\bin\Debug\ViewModel.dll
+E:\OpenSenseViewer\opensenseviwer\ViewModel\bin\Debug\ViewModel.pdb
+E:\OpenSenseViewer\opensenseviwer\ViewModel\bin\Debug\LiveCharts.dll
+E:\OpenSenseViewer\opensenseviwer\ViewModel\bin\Debug\Model.dll
+E:\OpenSenseViewer\opensenseviwer\ViewModel\bin\Debug\Newtonsoft.Json.dll
+E:\OpenSenseViewer\opensenseviwer\ViewModel\bin\Debug\Model.pdb
+E:\OpenSenseViewer\opensenseviwer\ViewModel\bin\Debug\LiveCharts.pdb
+E:\OpenSenseViewer\opensenseviwer\ViewModel\bin\Debug\LiveCharts.xml
+E:\OpenSenseViewer\opensenseviwer\ViewModel\bin\Debug\Newtonsoft.Json.xml
+E:\OpenSenseViewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.csprojResolveAssemblyReference.cache
+E:\OpenSenseViewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.dll
+E:\OpenSenseViewer\opensenseviwer\ViewModel\obj\Debug\ViewModel.pdb
